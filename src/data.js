@@ -1,6 +1,6 @@
 export const referanslar = [
     'Muus Coffee', 'Oyunevi', 'RetroLokal', 'Okeep',
-    'PRT Entertainment', 'Ercan Hukuk', 'Seya Mühendislik', 'Loop Casting'
+    'PRT Entertainment', 'Noble Law Firm', 'Seya Mühendislik', 'Loop Casting'
 ]
 
 /* One dedicated scenario per industry — its own headline, its own demo,
@@ -326,7 +326,17 @@ export const services = [
 
 export const projects = [
     {
+        slug: 'muus-pro', letter: 'M', tag: 'AI AGENT & KAFE YÖNETİMİ', year: '2026', title: 'MUUS PRO',
+        image: '/projects/muuspro.webp', url: 'https://muuspro.tr',
+        short: 'Kafeler için yapay zeka destekli yönetim platformu — kasa, stok ve menüyü agent yönetir.',
+        client: 'Muus Coffee', duration: 'Sürekli geliştirme',
+        problem: 'Kafe işletmecileri kasa, stok, menü ve raporlamayı ayrı ayrı araçlarla elle yönetiyor; neyin düzeltilmesi gerektiğini görmek için rakamları kendileri okumak zorunda kalıyordu.',
+        solution: 'Kafenin kendi verilerini okuyup neyin düzeltilmesi gerektiğini bulan ve değişikliği kendisi uygulayan bir AI agent platformu geliştirdik. Kasa, stok takibi, menü yönetimi ve raporlama tek üründe — canlı olarak muuspro.tr adresinde yayında.',
+        metrics: [['Canlı Ürün', 'muuspro.tr'], ['Sipariş → Kasa', 'Anlık'], ['Kurulum', '1 gün']]
+    },
+    {
         slug: 'ssw', letter: 'S', tag: 'VERİ & OTOMASYON', year: '2026', title: 'SSW',
+        image: '/projects/ssw.webp',
         short: 'Sahibinden.com için gelişmiş veri toplama ve analiz platformu (Sahibinden Scraper Web).',
         client: 'Kurumsal Müşteri', duration: '3 Ay',
         problem: 'Müşterinin Sahibinden.com üzerinden büyük ölçekli veri toplama ve analiz ihtiyacı vardı. Manuel süreçler zaman kaybına yol açıyor, veri tutarsızlıkları yaşanıyordu.',
@@ -334,7 +344,7 @@ export const projects = [
         metrics: [['Veri Doğruluğu', '%98'], ['İşlem Hızı', '10x'], ['Günlük Kayıt', '50K+']]
     },
     {
-        slug: 'retrolokal', letter: 'R', tag: 'E-TİCARET & MARKETPLACE', year: '2026', title: 'RetroLokal',
+        slug: 'retrolokal', letter: 'R', image: '/projects/retrolokal.webp', url: 'https://retrolokal.com', tag: 'E-TİCARET & MARKETPLACE', year: '2026', title: 'RetroLokal',
         short: 'Vintage ve retro ürünler için tam kapsamlı online pazar yeri platformu.',
         client: 'Girişimci', duration: '4 Ay',
         problem: 'Vintage ve retro ürün satıcıları dağınık sosyal medya hesapları üzerinden satış yapıyor, güvenilir bir pazar yeri ve ödeme altyapısından mahrumdu.',
@@ -342,7 +352,7 @@ export const projects = [
         metrics: [['Aktif İlan', '2K+'], ['Kayıtlı Üye', '1.5K+'], ['Kategori Sayısı', '30+']]
     },
     {
-        slug: 'nest', letter: 'N', tag: 'AKADEMİK & ARAŞTIRMA', year: '2026', title: 'NEST',
+        slug: 'nest', letter: 'N', image: '/projects/nest.webp', tag: 'AKADEMİK & ARAŞTIRMA', year: '2026', title: 'NEST',
         short: 'EEG veri analizi ve nörobilim araştırma platformu.',
         client: 'Akademik Kurum', duration: '5 Ay',
         problem: 'Araştırmacılar farklı formatlardaki EEG verilerini analiz etmek için birden fazla araç kullanmak zorunda kalıyor, gerçek zamanlı işbirliği yapamıyordu.',
@@ -350,7 +360,7 @@ export const projects = [
         metrics: [['Desteklenen Format', '10+'], ['Araştırmacı Sayısı', '50+'], ['Veri İşleme', 'Gerçek Zamanlı']]
     },
     {
-        slug: 'drv-e', letter: 'D', tag: 'ENERJİ & YÖNETİM', year: '2026', title: 'DRV-E',
+        slug: 'drv-e', letter: 'D', image: '/projects/drv-e.webp', tag: 'ENERJİ & YÖNETİM', year: '2026', title: 'DRV-E',
         short: 'Elektrik işleri takip ve yönetim dashboard paneli.',
         client: 'Elektrik Firması', duration: '2 Ay',
         problem: 'Saha ekipleri iş emirlerini telefon ve kağıt üzerinden takip ediyor, yönetim ekip verimliliğini ve müşteri taleplerini gerçek zamanlı göremiyordu.',

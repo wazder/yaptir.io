@@ -26,9 +26,19 @@ export function renderProjelerDetay(slug) {
                 <span><strong>Müşteri:</strong> ${p.client}</span>
                 <span><strong>Süre:</strong> ${p.duration}</span>
                 <span><strong>Yıl:</strong> ${p.year}</span>
+                ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener" class="link-arrow">Canlı siteyi gör ${icon('arrow')}</a>` : ''}
             </div>
         </div>
     </section>
+
+    ${p.image ? `
+    <section class="section section--tight" style="padding-bottom:0">
+        <div class="container">
+            <div class="project-detail-shot reveal">
+                <img src="${p.image}" alt="${p.title} ekran görüntüsü" />
+            </div>
+        </div>
+    </section>` : ''}
 
     <section class="section section--tight">
         <div class="container">

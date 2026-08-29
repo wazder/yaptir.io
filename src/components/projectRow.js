@@ -5,7 +5,9 @@ export function projectRowHTML(p) {
             <span class="project-tag">${p.tag}</span>
             <span class="project-year">${p.year}</span>
         </div>
-        <div class="project-thumb"><span>${p.letter}</span></div>
+        <div class="project-thumb">${p.image
+            ? `<img src="${p.image}" alt="${p.title} ekran görüntüsü" loading="lazy" />`
+            : `<span>${p.letter}</span>`}</div>
         <h3>${p.title}</h3>
         <p>${p.short}</p>
         <div class="project-metrics">
