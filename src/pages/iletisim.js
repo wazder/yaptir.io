@@ -26,7 +26,13 @@ export function renderIletisim() {
                         </div>
                     </div>
                     <div class="map-embed">
-                        ${icon('pin')} Cihangir, Beyoğlu/İstanbul
+                        <iframe
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=28.9752%2C41.0270%2C28.9900%2C41.0365&layer=mapnik&marker=41.03175%2C28.98262"
+                            title="yaptir.io ofis konumu — Cihangir, Beyoğlu/İstanbul"
+                            loading="lazy"></iframe>
+                        <a class="map-embed-link" href="https://www.openstreetmap.org/?mlat=41.03175&mlon=28.98262#map=17/41.03175/28.98262" target="_blank" rel="noopener">
+                            ${icon('pin')} Haritada aç
+                        </a>
                     </div>
                 </div>
 
