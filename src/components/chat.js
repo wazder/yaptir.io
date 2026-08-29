@@ -187,17 +187,23 @@ export function initChat() {
         body.scrollTop = body.scrollHeight
     }
 
+    // Only worth a link when the visitor is actually asking to move forward
+    // (pricing/contact/demo) — tacking one onto every single reply is what
+    // made the widget feel like a form instead of a conversation.
+    const CONTACT_INTENT = /teklif|fiyat|bütçe|ücret|maliyet|iletişim|görüş|demo/i
+
     async function respond(userText) {
         dismissDancer()
         addMessage(userText, 'user')
         const rule = matchRule(userText)
+        const wantsContact = CONTACT_INTENT.test(userText)
         const typing = addTyping()
 
         if (!GROQ_API_KEY) {
             window.setTimeout(() => {
                 typing.remove()
                 addMessage(rule.reply, 'bot')
-                addLink(rule.route, rule.label)
+                if (wantsContact) addLink('#/iletisim', 'Teklif formuna git')
             }, 700)
             return
         }
@@ -206,12 +212,12 @@ export function initChat() {
             const reply = await callGroq(userText)
             typing.remove()
             addMessage(reply, 'bot')
-            addLink(rule.route, rule.label)
+            if (wantsContact) addLink('#/iletisim', 'Teklif formuna git')
         } catch (err) {
             console.error('Groq API error:', err)
             typing.remove()
             addMessage(rule.reply, 'bot')
-            addLink(rule.route, rule.label)
+            if (wantsContact) addLink('#/iletisim', 'Teklif formuna git')
         }
     }
 
