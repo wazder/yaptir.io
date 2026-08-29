@@ -26,41 +26,39 @@ export function renderHome() {
         </div>
     </section>
 
+    <section class="intro-section reveal">
+        <span class="intro-watermark">AI</span>
+        <div class="intro-grid-pattern" aria-hidden="true"></div>
+        <div class="container intro-grid">
+            <div class="intro-copy">
+                <h2>İşinizi <span class="swash-underline gradient-orange">dönüştüren</span><br>teknoloji<span class="intro-dot">.</span></h2>
+                <p>Yapay zeka otomasyonları ve özel yazılım çözümleriyle işletmenizin süreçlerini hızlandırın, maliyetleri düşürün ve rekabet avantajı kazanın.</p>
+                <div class="cta-btn-row">
+                    <a href="#/iletisim" class="btn btn--primary">Projenizi Konuşalım ${icon('arrow')}</a>
+                    <a href="#/projeler" class="btn btn--outline">Projelerimiz ↗</a>
+                </div>
+            </div>
+            <div class="intro-stats">
+                <div class="stat-item"><div class="stat-num">20<span class="accent">+</span></div><div class="stat-label">Tamamlanan İş</div></div>
+                <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Aktif Proje</div></div>
+                <div class="stat-item"><div class="stat-num">3x</div><div class="stat-label">Ortalama Verimlilik Artışı</div></div>
+            </div>
+        </div>
+    </section>
+
     <div class="marquee-wrap">
         <span class="eyebrow">Güvenilir referanslarımız</span>
         ${marqueeHTML(referanslar)}
     </div>
 
-    <section class="section section--tight">
+    <section class="section section--tight sector-section">
+        <div class="sector-section-glow" aria-hidden="true"></div>
         <div class="container">
             <span class="eyebrow eyebrow--accent">Her sektöre</span>
             <h2 class="section-title">İşletmeniz hangisi<span class="dot">?</span></h2>
             <p class="section-lede">Seçin, size özel çözümü görün — her sektör için ayrı bir hikayemiz var.</p>
             <div class="reveal">
                 ${industryPickerHTML()}
-            </div>
-        </div>
-    </section>
-
-    <section class="intro-section reveal">
-        <span class="intro-watermark">AI</span>
-        <div class="container intro-grid">
-            <div class="intro-copy">
-                <span class="eyebrow">yaptir.io</span>
-                <h2>İşinizi dönüştüren<br>teknoloji.</h2>
-                <p>Yapay zeka otomasyonları ve özel yazılım çözümleriyle işletmenizin süreçlerini hızlandırın, maliyetleri düşürün ve rekabet avantajı kazanın.</p>
-                <div class="cta-btn-row">
-                    <a href="#/iletisim" class="btn btn--primary">Projenizi Konuşalım</a>
-                </div>
-            </div>
-            <div>
-                <span class="eyebrow eyebrow--accent">Projelerimiz</span>
-                <div class="stat-row">
-                    <div><div class="stat-num">20+</div><div class="stat-label">Tamamlanan İş</div></div>
-                    <div><div class="stat-num">4</div><div class="stat-label">Aktif Proje</div></div>
-                    <div><div class="stat-num">3x</div><div class="stat-label">Ortalama Verimlilik Artışı</div></div>
-                </div>
-                <a href="#/projeler" class="link-arrow" style="margin-top:20px">Tüm projelerimizi görün ${icon('arrow')}</a>
             </div>
         </div>
     </section>
@@ -89,6 +87,9 @@ export function renderHome() {
     </section>
 
     <section class="cta-band reveal">
+        <svg class="cta-band-arrow" viewBox="0 0 120 60" fill="none" aria-hidden="true">
+            <path d="M2 30h108M78 4l32 26-32 26" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <div class="container">
             <div>
                 <h2>Projenizi bugün konuşmaya başlayalım.</h2>
