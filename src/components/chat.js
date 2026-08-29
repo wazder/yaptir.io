@@ -5,7 +5,7 @@ import { services, industries, projects, team, contact } from '../data.js'
    without a .env.local, in which case we fall back to the old rule matcher
    below so the widget still degrades gracefully instead of breaking). */
 const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY
-const GROQ_MODEL = 'llama-3.3-70b-versatile'
+const GROQ_MODEL = 'openai/gpt-oss-120b'
 
 const SYSTEM_PROMPT = `Sen yaptir.io'nun yapay zeka asistanısın. yaptir.io, KOBİ'lere yapay zeka otomasyonu ve özel yazılım çözümleri üreten bir stüdyo.
 
