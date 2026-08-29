@@ -1,5 +1,6 @@
 import { renderHome, initHome } from './pages/home.js'
 import { renderHizmetler } from './pages/hizmetler.js'
+import { renderHizmetlerDetay } from './pages/hizmetlerDetay.js'
 import { renderProjeler } from './pages/projeler.js'
 import { renderHakkimizda } from './pages/hakkimizda.js'
 import { renderIletisim } from './pages/iletisim.js'
@@ -34,6 +35,17 @@ export function initRouter() {
 
     function paint() {
         const path = currentPath()
+        const [base, slug] = path.split('/')
+
+        if (base === 'hizmetler' && slug) {
+            app.innerHTML = renderHizmetlerDetay(slug)
+            setActiveNav('hizmetler')
+            closeMobileNav()
+            window.scrollTo({ top: 0, behavior: 'instant' })
+            initReveal(app)
+            return
+        }
+
         const route = routes[path] || routes['']
         app.innerHTML = route.render()
         setActiveNav(route.key)

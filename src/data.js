@@ -193,7 +193,15 @@ export const services = [
         id: 'ai-otomasyon', num: '01', icon: 'cpu', title: 'AI Otomasyon',
         short: 'İş süreçlerinizi yapay zeka ile otomatikleştirin.',
         long: 'Tekrarlayan işleri ortadan kaldırın, ekibinizi stratejik görevlere yönlendirin.',
-        tags: ['Python', 'TensorFlow', 'OpenAI', 'LangChain'],
+        tags: ['Python', 'TensorFlow', 'OpenAI', 'LangChain', 'n8n', 'Make'],
+        bullets: [
+            'E-posta ve müşteri taleplerinin otomatik yönlendirilmesi',
+            'Fatura, sözleşme ve form tanıma (OCR + NLP)',
+            'İş akışı otomasyonu ve karar destek sistemleri',
+            'RPA (Robotik Süreç Otomasyonu) entegrasyonu',
+            'Tahminleme modelleri ile proaktif iş yönetimi'
+        ],
+        results: [["%70'e kadar", 'Zaman Tasarrufu'], ['%95', 'Hata Oranı Azalma'], ['%40', 'Maliyet Düşüşü']],
         personas: [
             ['Restoran & Kafe', 'Fatura ve stok takibini otomatikleştirin, masaya değil hesaba odaklanın.'],
             ['E-ticaret', 'Sipariş onayı ve kargo bildirimi tek tık, elle uğraşmayın.'],
@@ -204,7 +212,15 @@ export const services = [
         id: 'ozel-yazilim', num: '02', icon: 'code', title: 'Özel Yazılım',
         short: 'İşletmenize özel, sıfırdan tasarlanan çözümler.',
         long: 'Web uygulamaları, mobil platformlar ve kurumsal sistemler — tam size göre.',
-        tags: ['React', 'Next.js', 'Node.js', 'TypeScript'],
+        tags: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'Docker'],
+        bullets: [
+            'Web uygulamaları ve kurumsal portallar',
+            'iOS ve Android mobil uygulama geliştirme',
+            'Mikroservis mimarisiyle ölçeklenebilir backend',
+            'Mevcut sistemlerle API tabanlı entegrasyon',
+            'CI/CD ile otomatik test ve dağıtım süreçleri'
+        ],
+        results: [['4-8 hafta', 'Ortalama Teslim'], ['%99.9', 'Uptime Garantisi'], ['%100', 'Kaynak Kod Sahipliği']],
         personas: [
             ['Restoran & Kafe', 'Rezervasyon ve sipariş sisteminizi sıfırdan, size özel kuralım.'],
             ['E-ticaret', 'Ürün kataloğundan ödemeye, markanıza özel bir mağaza kuralım.'],
@@ -215,7 +231,15 @@ export const services = [
         id: 'veri-analitik', num: '03', icon: 'chart', title: 'Veri & Analitik',
         short: 'Verilerinizi anlamlı iç görülere dönüştürün.',
         long: "Dashboard'lar, raporlama sistemleri ve tahminleme modelleri.",
-        tags: ['Python', 'Apache Spark', 'Snowflake', 'Metabase'],
+        tags: ['Python', 'Apache Spark', 'Snowflake', 'Metabase', 'dbt', 'Airflow'],
+        bullets: [
+            "Gerçek zamanlı satış ve operasyon dashboard'ları",
+            'Müşteri davranışı segmentasyonu ve kohort analizi',
+            'Talep tahminleme ve stok optimizasyon modelleri',
+            'Çoklu veri kaynağı entegrasyonu ve ETL süreçleri',
+            'Anomali tespiti ve otomatik uyarı sistemleri'
+        ],
+        results: [['%35', 'Daha Hızlı Karar Alma'], ['%25', 'Stok Fazlası Azalma'], ['Günlük', 'Güncel Veri']],
         personas: [
             ['Restoran & Kafe', 'En çok satan menüyü, boşa giden stoku ortaya çıkarın.'],
             ['E-ticaret', 'Hangi ürün ne zaman satılıyor, anlık görün.'],
@@ -226,7 +250,15 @@ export const services = [
         id: 'entegrasyon', num: '04', icon: 'link2', title: 'Entegrasyon',
         short: 'Mevcut sistemlerinizi birbirine bağlayın.',
         long: 'API geliştirme, üçüncü parti entegrasyonlar ve veri senkronizasyonu.',
-        tags: ['Node.js', 'Kafka', 'RabbitMQ', 'Docker'],
+        tags: ['Node.js', 'Kafka', 'RabbitMQ', 'Docker', 'Zapier', 'n8n'],
+        bullets: [
+            'REST ve GraphQL API geliştirme',
+            'E-ticaret, kargo ve muhasebe sistemleri entegrasyonu',
+            'Gerçek zamanlı veri senkronizasyonu',
+            'Webhook tabanlı olay yönetimi',
+            'Eski (legacy) sistemlerin modernizasyonu'
+        ],
+        results: [['%90', 'Manuel İşlem Azalması'], ['<1sn', 'Senkronizasyon Gecikmesi'], ['7/24', 'Kesintisiz Akış']],
         personas: [
             ['Restoran & Kafe', 'Yemek Sepeti, Getir ve kasa sisteminizi birbirine bağlayın.'],
             ['E-ticaret', "Shopify, kargo ve muhasebe sisteminizi birbirine bağlayın."],
@@ -237,7 +269,15 @@ export const services = [
         id: 'chatbot', num: '05', icon: 'message', title: 'Chatbot & Asistan',
         short: 'Akıllı chatbot çözümleri ile 7/24 destek.',
         long: 'Müşteri hizmetleri ve iç iletişim için doğal dil işleme destekli asistanlar.',
-        tags: ['GPT-4', 'Claude', 'Rasa', 'Dialogflow'],
+        tags: ['GPT-4', 'Claude', 'Rasa', 'Dialogflow', 'Pinecone', 'LangChain'],
+        bullets: [
+            'Müşteri hizmetleri chatbotları (web, WhatsApp, Telegram)',
+            'Şirket içi bilgi asistanı (HR, IT destek)',
+            'Satış ve lead qualification botları',
+            'Çoklu dil desteği ile global erişim',
+            'Doğal dil anlama (NLU) ve duygu analizi'
+        ],
+        results: [['<3sn', 'Yanıt Süresi'], ['%85+', 'Çözüm Oranı'], ['%60', 'Maliyet Tasarrufu']],
         personas: [
             ['Restoran & Kafe', "Rezervasyonları WhatsApp'tan otomatik alın."],
             ['E-ticaret', 'Kargo durumu sorularını bota bırakın, ekibiniz asıl işe odaklansın.'],
@@ -248,7 +288,15 @@ export const services = [
         id: 'danismanlik', num: '06', icon: 'compass', title: 'Danışmanlık',
         short: 'Dijital dönüşüm stratejinizi belirleyin.',
         long: 'Mevcut altyapı analizi, yol haritası oluşturma ve uygulama desteği.',
-        tags: ['Agile', 'Design Thinking', 'OKR', 'TOGAF'],
+        tags: ['Agile', 'Design Thinking', 'OKR', 'TOGAF', 'Lean', 'Scrum'],
+        bullets: [
+            'Mevcut teknoloji altyapısının denetimi',
+            'Dijital dönüşüm yol haritası oluşturma',
+            'Süreç optimizasyonu ve verimlilik analizi',
+            'Teknoloji seçimi ve mimari danışmanlığı',
+            'Ekip eğitimi ve bilgi transferi'
+        ],
+        results: [['2 hafta', 'İlk Yol Haritası'], ['3x', 'Ortalama Verimlilik'], ['Sınırsız', 'Danışmanlık Desteği']],
         personas: [
             ['Restoran & Kafe', 'Şube büyümenize uygun teknoloji yol haritası çıkaralım.'],
             ['E-ticaret', 'Ölçeklenme için doğru teknolojiyi doğru zamanda seçelim.'],
@@ -259,7 +307,15 @@ export const services = [
         id: 'sosyal-reklam', num: '07', icon: 'chart', title: 'Sosyal Medya & Reklam',
         short: 'İçerik ve reklamlarınızı yapay zekayla otomatik yönetin.',
         long: 'Meta ve Instagram reklamlarınızı otomatik optimize edin, içerik takvimini kendi kendine işleten bir sisteme devredin.',
-        tags: ['Meta Ads', 'Instagram', 'TikTok', 'Google Ads'],
+        tags: ['Meta Ads', 'Instagram', 'TikTok', 'Google Ads', 'Zapier', 'Make'],
+        bullets: [
+            'Meta ve Instagram reklam kampanyası yönetimi',
+            'Yapay zeka ile otomatik bütçe optimizasyonu',
+            'Hedef kitle segmentasyonu ve A/B testleri',
+            'İçerik takvimi ve otomatik paylaşım planlama',
+            'Dönüşüm takibi ve ROAS raporlama'
+        ],
+        results: [['3.5x', 'Ortalama ROAS'], ['%45', 'Tıklama Maliyeti Düşüşü'], ['Haftalık', 'Performans Raporu']],
         personas: [
             ['Restoran & Kafe', 'Yerel çevrenizdeki müşteriye otomatik reklam gösterin.'],
             ['E-ticaret', 'Bütçenizi en çok satan ürüne otomatik kaydırın.'],
