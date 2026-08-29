@@ -87,9 +87,6 @@ export function renderHome() {
     </section>
 
     <section class="cta-band reveal">
-        <svg class="cta-band-arrow" viewBox="0 0 120 60" fill="none" aria-hidden="true">
-            <path d="M2 30h108M78 4l32 26-32 26" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
         <div class="container">
             <div>
                 <h2>Projenizi bugün konuşmaya başlayalım.</h2>

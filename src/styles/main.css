@@ -2263,20 +2263,6 @@ p {
     overflow: hidden;
 }
 
-.cta-band-arrow {
-    position: absolute;
-    right: 6%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: clamp(80px, 12vw, 160px);
-    color: color-mix(in srgb, #fff 22%, transparent);
-    pointer-events: none;
-}
-
-@media (max-width: 780px) {
-    .cta-band-arrow { display: none; }
-}
-
 .cta-band .container {
     display: flex;
     justify-content: space-between;
