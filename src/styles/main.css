@@ -2437,7 +2437,6 @@ p {
     justify-content: space-between;
     align-items: center;
     padding-top: 24px;
-    border-top: 1px solid var(--border);
     flex-wrap: wrap;
     gap: 12px;
 }
@@ -2797,7 +2796,11 @@ body.hide-chat-fab .chat-nudge.is-visible {
 }
 
 .industry-scenario-caption {
-    min-height: 2.6em;
+    height: 3.9em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     transition: opacity .18s ease;
 }
 
