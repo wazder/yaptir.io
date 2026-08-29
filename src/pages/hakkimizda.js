@@ -8,17 +8,21 @@ export function renderHakkimizda() {
             <h1 class="section-title">Teknolojiyle<br>değer yaratırız.</h1>
             <p class="section-lede">Yapay zeka ve yazılım dünyasında uzmanlaşmış ekibimiz, her projeye iş ortağı gözüyle yaklaşır.</p>
 
-            <div class="stat-row">
-                <div><div class="stat-num">20+</div><div class="stat-label">Tamamlanan İş</div></div>
-                <div><div class="stat-num">4</div><div class="stat-label">Aktif Proje</div></div>
-                <div><div class="stat-num">3x</div><div class="stat-label">Ortalama Verimlilik Artışı</div></div>
+            <div class="stat-band">
+                <div class="stat-row">
+                    <div><div class="stat-num">20+</div><div class="stat-label">Tamamlanan İş</div></div>
+                    <div><div class="stat-num">4</div><div class="stat-label">Aktif Proje</div></div>
+                    <div><div class="stat-num">3x</div><div class="stat-label">Ortalama Verimlilik Artışı</div></div>
+                </div>
             </div>
 
-            <div style="max-width:720px;margin-top:48px;display:flex;flex-direction:column;gap:16px">
-                <p style="color:var(--muted)">Amacımız sadece kod yazmak değil, işinizi gerçekten anlayarak en doğru çözümü üretmek.</p>
-                <p style="color:var(--muted)">Kurulduğumuz günden bu yana finans, sağlık, lojistik ve perakende sektörlerinde onlarca şirkete dijital dönüşüm yolculuklarında eşlik ettik.</p>
-                <p style="color:var(--muted)">Her projede aynı ilkeyi takip ediyoruz: önce dinle, sonra anla, en son çöz. Bu yaklaşım bizi sadece bir teknoloji sağlayıcısı değil, güvenilir bir iş ortağı yapıyor.</p>
-                <p style="color:var(--muted)">Ekibimiz yapay zeka mühendisleri, full-stack geliştiriciler, veri bilimciler, UX tasarımcılar ve proje yöneticilerinden oluşuyor. Her biri kendi alanında uzman, birlikte çalışmaya tutkulu.</p>
+            <div class="about-lede-grid">
+                <h2 class="about-lede-title">Amacımız sadece kod yazmak değil, işinizi gerçekten anlayarak en doğru çözümü üretmek.</h2>
+                <div class="about-lede-body">
+                    <p>Kurulduğumuz günden bu yana finans, sağlık, lojistik ve perakende sektörlerinde onlarca şirkete dijital dönüşüm yolculuklarında eşlik ettik.</p>
+                    <p>Her projede aynı ilkeyi takip ediyoruz: önce dinle, sonra anla, en son çöz. Bu yaklaşım bizi sadece bir teknoloji sağlayıcısı değil, güvenilir bir iş ortağı yapıyor.</p>
+                    <p>Ekibimiz yapay zeka mühendisleri, full-stack geliştiriciler, veri bilimciler, UX tasarımcılar ve proje yöneticilerinden oluşuyor. Her biri kendi alanında uzman, birlikte çalışmaya tutkulu.</p>
+                </div>
             </div>
         </div>
     </section>
