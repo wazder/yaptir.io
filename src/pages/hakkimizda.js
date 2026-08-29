@@ -1,8 +1,10 @@
 import { team, process, stack } from '../data.js'
+import { icon } from '../utils/icons.js'
 
 export function renderHakkimizda() {
     return `
-    <section class="section" style="padding-top:160px">
+    <section class="section services-section" style="padding-top:160px">
+        <div class="services-section-aurora" aria-hidden="true"></div>
         <div class="container">
             <span class="eyebrow">Hakkımızda</span>
             <h1 class="section-title">Teknolojiyle<br>değer yaratırız.</h1>
@@ -37,6 +39,7 @@ export function renderHakkimizda() {
                         <div class="team-avatar">${m.initials}</div>
                         <h4>${m.name}</h4>
                         <span>${m.role}</span>
+                        <span class="team-card-social">${icon('linkedin')}</span>
                     </div>
                 `).join('')}
             </div>
