@@ -31,11 +31,13 @@ export function renderProjelerDetay(slug) {
         </div>
     </section>
 
-    ${p.image ? `
+    ${p.video || p.image ? `
     <section class="section section--tight" style="padding-bottom:0">
         <div class="container">
             <div class="project-detail-shot reveal">
-                <img src="${p.image}" alt="${p.title} ekran görüntüsü" />
+                ${p.video
+                    ? `<video src="${p.video}" poster="${p.image || ''}" autoplay muted loop playsinline></video>`
+                    : `<img src="${p.image}" alt="${p.title} ekran görüntüsü" />`}
             </div>
         </div>
     </section>` : ''}

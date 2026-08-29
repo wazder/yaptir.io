@@ -2271,7 +2271,8 @@ p {
     box-shadow: 0 24px 48px -24px rgba(0,0,0,.4);
 }
 
-.project-detail-shot img {
+.project-detail-shot img,
+.project-detail-shot video {
     width: 100%;
     display: block;
 }
@@ -2636,6 +2637,94 @@ p {
 
 .form-msg.is-error {
     color: var(--primary);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Testimonials
+───────────────────────────────────────────────────────── */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0;
+    padding: 32px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.testimonial-card blockquote {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--fg);
+}
+
+.testimonial-card figcaption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-family: var(--font-head);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.testimonial-card:nth-child(2n) .testimonial-avatar {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.testimonial-card figcaption strong {
+    display: block;
+    font-size: 14.5px;
+}
+
+.testimonial-card figcaption small {
+    color: var(--muted);
+    font-size: 12.5px;
+}
+
+.testimonial-card--cta {
+    justify-content: center;
+    gap: 12px;
+    background: color-mix(in srgb, var(--primary) 7%, var(--card));
+    border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+}
+
+.testimonial-cta-num {
+    font-family: var(--font-head);
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.testimonial-cta-text {
+    color: var(--muted);
+    font-size: 14.5px;
+    max-width: 240px;
+}
+
+@media (max-width: 900px) {
+    .testimonial-grid { grid-template-columns: 1fr; }
 }
 
 /* ─────────────────────────────────────────────────────────

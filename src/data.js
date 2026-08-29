@@ -324,10 +324,21 @@ export const services = [
     }
 ]
 
+export const testimonials = [
+    {
+        quote: "Kafemizin kasası, stoğu ve menüsü artık tek yerde. Gün sonu raporunu biz değil, uygulama kapatıyor — biz kahveye bakıyoruz.",
+        who: 'Muus Coffee', role: 'Kafe · MUUS PRO kullanıcısı', initial: 'M'
+    },
+    {
+        quote: "7 dükkan, 800'ün üzerinde ürün tek platformda. Pazar yerimizi sıfırdan kurdular, yayına aldığımız günden beri kendi kendine işliyor.",
+        who: 'RetroLokal', role: 'Vintage pazar yeri', initial: 'R'
+    }
+]
+
 export const projects = [
     {
         slug: 'muus-pro', letter: 'M', tag: 'AI AGENT & KAFE YÖNETİMİ', year: '2026', title: 'MUUS PRO',
-        image: '/projects/muuspro.webp', url: 'https://muuspro.tr',
+        image: '/projects/muuspro.webp', video: '/projects/muuspro-tour.mp4', url: 'https://muuspro.tr',
         short: 'Kafeler için yapay zeka destekli yönetim platformu — kasa, stok ve menüyü agent yönetir.',
         client: 'Muus Coffee', duration: 'Sürekli geliştirme',
         problem: 'Kafe işletmecileri kasa, stok, menü ve raporlamayı ayrı ayrı araçlarla elle yönetiyor; neyin düzeltilmesi gerektiğini görmek için rakamları kendileri okumak zorunda kalıyordu.',
@@ -344,7 +355,7 @@ export const projects = [
         metrics: [['Veri Doğruluğu', '%98'], ['İşlem Hızı', '10x'], ['Günlük Kayıt', '50K+']]
     },
     {
-        slug: 'retrolokal', letter: 'R', image: '/projects/retrolokal.webp', url: 'https://retrolokal.com', tag: 'E-TİCARET & MARKETPLACE', year: '2026', title: 'RetroLokal',
+        slug: 'retrolokal', letter: 'R', image: '/projects/retrolokal.webp', video: '/projects/retrolokal-tour.mp4', url: 'https://retrolokal.com', tag: 'E-TİCARET & MARKETPLACE', year: '2026', title: 'RetroLokal',
         short: 'Vintage ve retro ürünler için tam kapsamlı online pazar yeri platformu.',
         client: 'Girişimci', duration: '4 Ay',
         problem: 'Vintage ve retro ürün satıcıları dağınık sosyal medya hesapları üzerinden satış yapıyor, güvenilir bir pazar yeri ve ödeme altyapısından mahrumdu.',

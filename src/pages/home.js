@@ -1,4 +1,4 @@
-import { referanslar, services } from '../data.js'
+import { referanslar, services, testimonials } from '../data.js'
 import { icon } from '../utils/icons.js'
 import { marqueeHTML } from '../components/marquee.js'
 import { initHeroField } from '../components/heroField.js'
@@ -82,6 +82,32 @@ export function renderHome() {
                         <p>${s.short}</p>
                     </div>
                 `).join('')}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--tight">
+        <div class="container">
+            <span class="eyebrow eyebrow--accent">Müşteri Deneyimi</span>
+            <h2 class="section-title">Onlar anlatıyor<span class="dot">.</span></h2>
+            <div class="testimonial-grid">
+                ${testimonials.map(t => `
+                    <figure class="testimonial-card reveal">
+                        <blockquote>"${t.quote}"</blockquote>
+                        <figcaption>
+                            <span class="testimonial-avatar">${t.initial}</span>
+                            <span>
+                                <strong>${t.who}</strong>
+                                <small>${t.role}</small>
+                            </span>
+                        </figcaption>
+                    </figure>
+                `).join('')}
+                <a class="testimonial-card testimonial-card--cta reveal" href="#/projeler">
+                    <span class="testimonial-cta-num">5</span>
+                    <span class="testimonial-cta-text">tamamlanmış projeyi ekran görüntüleri ve sonuçlarıyla inceleyin</span>
+                    <span class="link-arrow">Projelere git ${icon('arrow')}</span>
+                </a>
             </div>
         </div>
     </section>
