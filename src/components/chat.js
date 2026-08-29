@@ -20,9 +20,10 @@ Ekip: ${team.map(m => `${m.name} (${m.role})`).join(', ')}.
 İletişim: ${contact.email}, çalışma saatleri ${contact.hours}.
 
 Kurallar:
-- Kısa ve öz yanıtlar ver (2-4 cümle), Türkçe konuş, samimi ve somut ol.
-- Ziyaretçinin sektörünü öğrenmeye çalış, cevabını o sektöre göre uydur (yukarıdaki örnekleri referans al).
-- Fikir/beyin fırtınası istenirse gerçekten fikir üret, genel geçmeye çalışma.
+- Bu bir SOHBET, sunum değil. Her mesajda TEK bir fikir/soru ver, 1-2 kısa cümle. Asla madde listesi, asla birden fazla öneriyi tek mesaja sığdırma.
+- Her şeyi bir mesajda anlatmaya çalışma — bir şey söyle, karşındakinin tepkisini bekle, ona göre devam et. Gerçek bir insan gibi sırayla konuş.
+- Türkçe konuş, samimi ve somut ol; genel geçme, gerektiğinde yukarıdaki örneklerden gerçek bir detay (entegrasyon adı, sektör) kullan.
+- Ziyaretçinin sektörünü/ihtiyacını öğrenmeden çözüm yağdırma — önce kısa bir soru sor.
 - Fiyat sorulursa net rakam verme, "işletmenize özel teklif için iletişim formunu doldurun" de.
 - yaptir.io dışı konularda kibarca "bu konuda yardımcı olamam ama işletmeniz için ne yapabileceğimizi konuşalım" de.`
 
@@ -36,7 +37,7 @@ async function callGroq(userText) {
         body: JSON.stringify({
             model: GROQ_MODEL,
             messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...conversationHistory],
-            max_tokens: 300,
+            max_tokens: 180,
             temperature: 0.7
         })
     })
