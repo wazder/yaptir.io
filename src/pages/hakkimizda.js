@@ -1,0 +1,73 @@
+import { team, process, stack } from '../data.js'
+
+export function renderHakkimizda() {
+    return `
+    <section class="section" style="padding-top:160px">
+        <div class="container">
+            <span class="eyebrow">Hakkımızda</span>
+            <h1 class="section-title">Teknolojiyle<br>değer yaratırız.</h1>
+            <p class="section-lede">Yapay zeka ve yazılım dünyasında uzmanlaşmış ekibimiz, her projeye iş ortağı gözüyle yaklaşır.</p>
+
+            <div class="stat-row">
+                <div><div class="stat-num">20+</div><div class="stat-label">Tamamlanan İş</div></div>
+                <div><div class="stat-num">4</div><div class="stat-label">Aktif Proje</div></div>
+                <div><div class="stat-num">3x</div><div class="stat-label">Ortalama Verimlilik Artışı</div></div>
+            </div>
+
+            <div style="max-width:720px;margin-top:48px;display:flex;flex-direction:column;gap:16px">
+                <p style="color:var(--muted)">Amacımız sadece kod yazmak değil, işinizi gerçekten anlayarak en doğru çözümü üretmek.</p>
+                <p style="color:var(--muted)">Kurulduğumuz günden bu yana finans, sağlık, lojistik ve perakende sektörlerinde onlarca şirkete dijital dönüşüm yolculuklarında eşlik ettik.</p>
+                <p style="color:var(--muted)">Her projede aynı ilkeyi takip ediyoruz: önce dinle, sonra anla, en son çöz. Bu yaklaşım bizi sadece bir teknoloji sağlayıcısı değil, güvenilir bir iş ortağı yapıyor.</p>
+                <p style="color:var(--muted)">Ekibimiz yapay zeka mühendisleri, full-stack geliştiriciler, veri bilimciler, UX tasarımcılar ve proje yöneticilerinden oluşuyor. Her biri kendi alanında uzman, birlikte çalışmaya tutkulu.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--tight">
+        <div class="container">
+            <span class="eyebrow eyebrow--accent">Ekibimiz</span>
+            <h2 class="section-title">Arkasındaki isimler<span class="dot">.</span></h2>
+            <div class="team-grid">
+                ${team.map(m => `
+                    <div class="team-card reveal">
+                        <div class="team-avatar">${m.initials}</div>
+                        <h4>${m.name}</h4>
+                        <span>${m.role}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--tight">
+        <div class="container">
+            <span class="eyebrow">Sürecimiz</span>
+            <h2 class="section-title">Nasıl çalışırız<span class="dot">?</span></h2>
+            <div class="process-grid">
+                ${process.map(s => `
+                    <div class="process-card reveal">
+                        <div class="process-num">${s.num}</div>
+                        <h4>${s.title}</h4>
+                        <p>${s.text}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--tight">
+        <div class="container">
+            <span class="eyebrow eyebrow--accent">Teknolojiler</span>
+            <h2 class="section-title">Araç kutumuz<span class="dot">.</span></h2>
+            <div class="stack-grid">
+                ${stack.map(col => `
+                    <div class="stack-col reveal">
+                        <h4>${col.title}</h4>
+                        <ul>${col.items.map(i => `<li>${i}</li>`).join('')}</ul>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </section>
+    `
+}

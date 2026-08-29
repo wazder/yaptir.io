@@ -1,175 +1,62 @@
-/* ═══════════════════════════════════════════════════════════════════════
-   YAPTIR.IO AI STUDIO - Main JavaScript
-   Orchestrates all interactions and animations
-═══════════════════════════════════════════════════════════════════════ */
+import './styles/main.css'
+import { initRouter } from './router.js'
+import { initChat } from './components/chat.js'
+import { initThemeToggle } from './components/themeToggle.js'
+import { initServiceModal } from './components/serviceModal.js'
 
-// ─────────────────────────────────────────────────────────────────────
-// DEVICE DETECTION - Redirect to mobile version based on screen width
-// ─────────────────────────────────────────────────────────────────────
-(function () {
-    const MOBILE_BREAKPOINT = 768; // px
+document.querySelector('[data-nav-toggle]')?.addEventListener('click', () => {
+    document.querySelector('[data-mobile-nav]')?.classList.toggle('is-open')
+})
 
-    function checkScreenSize() {
-        const isMobileSize = window.innerWidth <= MOBILE_BREAKPOINT;
+const header = document.querySelector('.site-header')
+let headerTicking = false
+let lastScrollY = window.scrollY
+function syncHeaderScrollState() {
+    headerTicking = false
+    if (!header) return
+    const y = window.scrollY
 
-        // If screen is small and not on mobile page, redirect to mobile
-        if (isMobileSize && !window.location.pathname.includes('/mobile/')) {
-            window.location.href = '/src/mobile/index.html';
-        }
-    }
+    // hysteresis: different enter/exit thresholds so hovering near the
+    // boundary (e.g. rubber-band scroll at the top) can't flip the class rapidly
+    const scrolled = header.classList.contains('is-scrolled')
+    if (!scrolled && y > 48) header.classList.add('is-scrolled')
+    else if (scrolled && y < 24) header.classList.remove('is-scrolled')
 
-    // Check on load
-    checkScreenSize();
-
-    // Check on resize
-    window.addEventListener('resize', checkScreenSize);
-})();
-
-// Import CSS
-import './styles/main.css';
-import './styles/sections/galaxy-chat.css';
-
-import { initHeroCanvas } from './modules/heroCanvas.js';
-import { initScrollAnimations, initMarqueeParallax, initCanvasModeObserver } from './modules/scrollAnimations.js';
-import { initThemeSwitcher } from './core/themeSwitcher.js';
-import { initFullPageScroll } from './core/fullPageScroll.js';
-import { initSectorSpotlight } from './modules/sectorSpotlight.js';
-// import { initEmojiRain } from './modules/emojiRain.js'; // Disabled - replaced with icons
-import { initGalaxyCanvas } from './modules/aiChatCanvas.js';
-import { initGalaxyChat } from './modules/aiChat.js';
-import { initApproachXray } from './modules/approachXray.js';
-
-// ─────────────────────────────────────────────────────────────────────
-// DOM Ready (Desktop Only)
-// ─────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('🖥️ Yaptir.io AI Studio (Desktop) - Initializing...');
-
-    // Initialize Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-
-    // Initialize all modules
-    initHeroCanvas();
-    initScrollAnimations();
-    initMarqueeParallax();
-    initCanvasModeObserver();
-    initThemeSwitcher();
-    initFullPageScroll();
-    initSectorSpotlight();
-    // initEmojiRain(); // Disabled - replaced with icons
-    initGalaxyCanvas();
-    initGalaxyChat();
-    initApproachXray();
-    initHeader();
-    initContactForm();
-
-    // Re-initialize Lucide icons after dynamic content loads
-    setTimeout(() => {
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    }, 500);
-
-    console.log('✨ All modules initialized!');
-});
-
-// ─────────────────────────────────────────────────────────────────────
-// Header Scroll Effects
-// ─────────────────────────────────────────────────────────────────────
-function initHeader() {
-    const header = document.getElementById('header');
-    if (!header) return;
-
-    // Header only visible on first section (hero)
-    // Listen to custom sectionChanged event from fullPageScroll
-    window.addEventListener('sectionChanged', (e) => {
-        const { index } = e.detail;
-
-        if (index === 0) {
-            // Show header on hero section
-            header.style.transform = 'translateY(0)';
-            header.style.opacity = '1';
-            header.style.pointerEvents = 'auto';
-        } else {
-            // Hide header on all other sections
-            header.style.transform = 'translateY(-100%)';
-            header.style.opacity = '0';
-            header.style.pointerEvents = 'none';
-        }
-    });
-
-    // Also listen to native scroll for mobile/fallback
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > 100) {
-            header.style.transform = 'translateY(-100%)';
-            header.style.opacity = '0';
-            header.style.pointerEvents = 'none';
-        } else {
-            header.style.transform = 'translateY(0)';
-            header.style.opacity = '1';
-            header.style.pointerEvents = 'auto';
-        }
-    }, { passive: true });
+    // hide while scrolling down, reveal on any upward scroll (or near the top)
+    const goingDown = y > lastScrollY
+    if (y < 80) header.classList.remove('is-hidden')
+    else if (goingDown) header.classList.add('is-hidden')
+    else header.classList.remove('is-hidden')
+    lastScrollY = y
 }
+window.addEventListener('scroll', () => {
+    if (headerTicking) return
+    headerTicking = true
+    requestAnimationFrame(syncHeaderScrollState)
+}, { passive: true })
+syncHeaderScrollState()
 
-// ─────────────────────────────────────────────────────────────────────
-// Contact Form - Opens user's email client with mailto:
-// ─────────────────────────────────────────────────────────────────────
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Get form data (updated IDs for accessibility)
-        const name = form.querySelector('#contact-name').value;
-        const email = form.querySelector('#contact-email').value;
-        const message = form.querySelector('#contact-message').value || '';
-
-        // Build mailto link
-        const subject = `Yaptir.io İletişim Formu - ${name}`;
-        const body = `İsim: ${name}\nE-posta: ${email}\n\nMesaj:\n${message}`;
-
-        const mailtoLink = `mailto:contact@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Open user's email client
-        window.location.href = mailtoLink;
-    });
+// The hero already has its own AI input — don't show the floating chat
+// bubble on top of it too. It fades in once the hero scrolls out of view
+// (or immediately on pages that have no hero).
+let fabTicking = false
+function syncChatFabVisibility() {
+    fabTicking = false
+    const hero = document.querySelector('.hero')
+    const pastHero = !hero || hero.getBoundingClientRect().bottom < 80
+    document.body.classList.toggle('hide-chat-fab', !pastHero)
 }
+window.addEventListener('scroll', () => {
+    if (fabTicking) return
+    fabTicking = true
+    requestAnimationFrame(syncChatFabVisibility)
+}, { passive: true })
+window.addEventListener('hashchange', () => window.setTimeout(syncChatFabVisibility, 0))
 
-// ─────────────────────────────────────────────────────────────────────
-// Smooth Scroll for Anchor Links (Synced with Full Page Scroll)
-// ─────────────────────────────────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (target) {
-            // Find the section index for full-page scroll sync
-            const sections = document.querySelectorAll('.scroll-section');
-            let targetIndex = -1;
-            sections.forEach((section, index) => {
-                if (section === target || section.contains(target) || `#${section.id}` === targetId) {
-                    targetIndex = index;
-                }
-            });
+initThemeToggle()
+initServiceModal()
+initChat()
+initRouter()
 
-            // If found, dispatch section change event
-            if (targetIndex >= 0) {
-                const event = new CustomEvent('navigateToSection', { detail: { index: targetIndex } });
-                window.dispatchEvent(event);
-            }
-
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+// runs after the router has rendered the page's DOM (hero included, if any)
+syncChatFabVisibility()
