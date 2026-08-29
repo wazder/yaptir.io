@@ -2,6 +2,7 @@ import { renderHome, initHome } from './pages/home.js'
 import { renderHizmetler } from './pages/hizmetler.js'
 import { renderHizmetlerDetay } from './pages/hizmetlerDetay.js'
 import { renderProjeler } from './pages/projeler.js'
+import { renderProjelerDetay } from './pages/projelerDetay.js'
 import { renderHakkimizda } from './pages/hakkimizda.js'
 import { renderIletisim } from './pages/iletisim.js'
 import { initReveal } from './components/reveal.js'
@@ -14,6 +15,11 @@ const routes = {
     'projeler': { render: renderProjeler, key: 'projeler' },
     'hakkimizda': { render: renderHakkimizda, key: 'hakkimizda' },
     'iletisim': { render: renderIletisim, init: initContactForm, key: 'iletisim' }
+}
+
+const detailRoutes = {
+    hizmetler: renderHizmetlerDetay,
+    projeler: renderProjelerDetay
 }
 
 function currentPath() {
@@ -37,9 +43,9 @@ export function initRouter() {
         const path = currentPath()
         const [base, slug] = path.split('/')
 
-        if (base === 'hizmetler' && slug) {
-            app.innerHTML = renderHizmetlerDetay(slug)
-            setActiveNav('hizmetler')
+        if (slug && detailRoutes[base]) {
+            app.innerHTML = detailRoutes[base](slug)
+            setActiveNav(base)
             closeMobileNav()
             window.scrollTo({ top: 0, behavior: 'instant' })
             initReveal(app)

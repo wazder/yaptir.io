@@ -13,7 +13,9 @@ export function renderProjeler() {
 
     <section class="section section--tight">
         <div class="container">
-            ${projects.map(p => projectRowHTML(p)).join('')}
+            <div class="project-grid">
+                ${projects.map(p => projectRowHTML(p)).join('')}
+            </div>
         </div>
     </section>
     `
