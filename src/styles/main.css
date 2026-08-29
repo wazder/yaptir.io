@@ -882,6 +882,38 @@ p {
     color: var(--muted);
 }
 
+.services-section {
+    background: var(--bg-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-section-aurora {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg,
+        transparent 0%,
+        color-mix(in srgb, var(--primary) 12%, transparent) 22%,
+        color-mix(in srgb, var(--accent) 12%, transparent) 38%,
+        transparent 55%,
+        color-mix(in srgb, var(--primary) 9%, transparent) 78%,
+        transparent 100%);
+    background-size: 260% 260%;
+    animation: services-flow 16s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes services-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.services-section .container {
+    position: relative;
+    z-index: 1;
+}
+
 .sector-section {
     position: relative;
     overflow: hidden;

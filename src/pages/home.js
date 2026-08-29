@@ -63,13 +63,13 @@ export function renderHome() {
         </div>
     </section>
 
-    <section class="section" id="hizmetler">
+    <section class="section services-section" id="hizmetler">
+        <div class="services-section-aurora" aria-hidden="true"></div>
         <div class="container">
             <div class="section-head">
                 <div>
                     <span class="eyebrow">Hizmetlerimiz</span>
                     <h2 class="section-title">Ne yapıyoruz<span class="dot">?</span></h2>
-                    <p class="section-lede">Yukarıda gördüğünüz çözümlerin arkasındaki 7 temel yetenek.</p>
                 </div>
                 <a href="#/hizmetler" class="link-arrow">Tüm hizmetler ${icon('arrow')}</a>
             </div>
