@@ -36,8 +36,8 @@ export function renderProjelerDetay(slug) {
         <div class="container">
             <div class="project-detail-shot reveal">
                 ${p.video
-                    ? `<video src="${p.video}" poster="${p.image || ''}" autoplay muted loop playsinline></video>`
-                    : `<img src="${p.image}" alt="${p.title} ekran görüntüsü" />`}
+                    ? `<video src="${p.video}" poster="${p.image || ''}" width="1600" height="800" autoplay muted loop playsinline></video>`
+                    : `<img src="${p.image}" alt="${p.title} ekran görüntüsü" width="1600" height="800" />`}
             </div>
         </div>
     </section>` : ''}

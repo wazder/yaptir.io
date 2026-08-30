@@ -1,0 +1,13 @@
+{
+    "name": "yaptir.io",
+    "short_name": "yaptir.io",
+    "description": "KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri.",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#ffffff",
+    "theme_color": "#f4551f",
+    "lang": "tr",
+    "icons": [
+        { "src": "/favicon.png", "sizes": "any", "type": "image/png" }
+    ]
+}

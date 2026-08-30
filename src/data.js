@@ -188,6 +188,57 @@ export const industries = [
     }
 ]
 
+/* Sektör iniş sayfaları (/sektorler/<slug>) — "restoran yazılımı",
+   "klinik randevu sistemi" gibi sektör+niyet aramalarını yakalayan
+   başlık/açıklama/giriş metinleri. */
+export const sektorSeo = {
+    restoran: {
+        title: 'Restoran & Kafe Yazılımı Yaptır — Adisyon, Entegrasyon, QR | yaptir.io',
+        desc: 'Restoran ve kafeler için yazılım: Adisyo, Yemeksepeti, Getir Yemek entegrasyonu, WhatsApp rezervasyon botu, canlı masa takibi. Stok tek yerden, her kanal senkron.',
+        intro: 'Adisyon, paket servis kanalları ve rezervasyon aynı sisteme bağlanır; menü ve stok tek yerden yönetilir, mutfağa odaklanırsınız.'
+    },
+    eticaret: {
+        title: 'E-ticaret Entegrasyonu & Otomasyonu Yaptır — Trendyol, Shopify | yaptir.io',
+        desc: 'E-ticaret işletmeleri için yazılım: Trendyol, Hepsiburada ve Shopify siparişleri tek panelde, stok senkron, kargo ve muhasebe otomatik. Fazla satış riski sıfır.',
+        intro: 'Tüm pazaryeri siparişleriniz tek ekranda toplanır; stok, kargo ve fatura kendiliğinden akar, panel panel gezmek biter.'
+    },
+    klinik: {
+        title: 'Klinik & Güzellik Merkezi Yazılımı — Randevu Sistemi Yaptır | yaptir.io',
+        desc: 'Klinik ve güzellik merkezleri için randevu sistemi: 7/24 online randevu botu, otomatik SMS hatırlatma, Google Takvim senkronu, faturalama. Boş koltuk kalmasın.',
+        intro: 'Randevu alma, hatırlatma ve faturalama kendi kendine işler; gelmeyen hasta oranı düşer, takvim kendiliğinden dolar.'
+    },
+    kuafor: {
+        title: 'Kuaför & Berber Randevu Sistemi Yaptır — WhatsApp Botu | yaptir.io',
+        desc: "Kuaför ve berberler için randevu yazılımı: WhatsApp'tan otomatik randevu, koltuk bazlı takvim, randevu sonrası otomatik teşekkür ve yorum isteme.",
+        intro: "Müşteri WhatsApp'tan yazar, bot uygun saati bulup randevuyu kendisi oluşturur; siz makasınıza odaklanırsınız."
+    },
+    emlak: {
+        title: 'Emlak Ofisi Yazılımı Yaptır — Sahibinden, Hepsiemlak Senkronu | yaptir.io',
+        desc: 'Emlak ofisleri için portföy yazılımı: Sahibinden, Hepsiemlak, Emlakjet ilanları tek girişle her portalda; görüntülenme takibi, gösterim takvimi.',
+        intro: 'İlanı bir kez girersiniz, tüm portallarda aynı anda yayına girer; hangi portföy ilgi görüyor tek bakışta görürsünüz.'
+    },
+    hukuk: {
+        title: 'Hukuk Bürosu Yazılımı Yaptır — UYAP Takip & Müvekkil Botu | yaptir.io',
+        desc: 'Hukuk büroları için yazılım: UYAP dosya durumu otomatik senkron, duruşma takvimi ve hatırlatma, müvekkile otomatik bilgilendirme botu.',
+        intro: "Dosya durumları kendiliğinden güncellenir, 'dosyam ne durumda' sorularını bot yanıtlar; siz duruşmaya hazırlanırsınız."
+    },
+    fitness: {
+        title: 'Spor Salonu & Fitness Yazılımı Yaptır — Üyelik Takip Sistemi | yaptir.io',
+        desc: 'Spor salonları için üyelik yazılımı: paket ve ödeme takibi, ders programı doluluk ekranı, üyelik bitmeden otomatik yenileme hatırlatması.',
+        intro: 'Kimin üyeliği bitiyor, kim ödeme yapmadı anlık görünür; yenileme hatırlatmaları otomatik gider, üye kaybı azalır.'
+    },
+    egitim: {
+        title: 'Kurs Merkezi & Eğitim Kurumu Yazılımı Yaptır — Veli Bilgilendirme | yaptir.io',
+        desc: 'Kurs merkezleri için yazılım: öğrenci ve taksit takibi, devamsızlıkta veliye otomatik bildirim, ders programı, online kayıt botu.',
+        intro: 'Taksit ve devamsızlık takibi otomatikleşir, veli anında bilgilenir; kayıt döneminde formları bot toplar.'
+    },
+    otel: {
+        title: 'Otel Kanal Yöneticisi & Otomasyon Yaptır — Booking, Airbnb | yaptir.io',
+        desc: 'Otel ve konaklama için yazılım: Booking.com, Airbnb, Expedia tek takvimde; fiyat ve müsaitlik senkron, çift rezervasyon riski sıfır, misafir botu.',
+        intro: 'Tüm kanallardaki fiyat ve müsaitlik tek takvimden yönetilir; misafir sorularını bot yanıtlar, resepsiyon rahatlar.'
+    }
+}
+
 export const services = [
     {
         id: 'ai-otomasyon', num: '01', icon: 'cpu', title: 'AI Otomasyon',

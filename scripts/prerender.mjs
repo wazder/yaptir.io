@@ -16,8 +16,9 @@ const { renderProjeler } = await import('../src/pages/projeler.js')
 const { renderProjelerDetay } = await import('../src/pages/projelerDetay.js')
 const { renderHakkimizda } = await import('../src/pages/hakkimizda.js')
 const { renderIletisim } = await import('../src/pages/iletisim.js')
+const { renderSektorler, renderSektorlerDetay } = await import('../src/pages/sektorler.js')
 const { metaFor } = await import('../src/seo.js')
-const { services, projects, contact, faqGenel, team, process: surec } = await import('../src/data.js')
+const { services, projects, contact, faqGenel, team, process: surec, industries, sektorSeo } = await import('../src/data.js')
 
 const BASE = 'https://yaptir.io'
 
@@ -167,6 +168,30 @@ const routes = [
             breadcrumbLd([['Ana Sayfa', BASE], ['Hizmetler', `${BASE}/hizmetler/`], [s.title, `${BASE}/hizmetler/${s.id}/`]])
         ]
     })),
+    { path: 'sektorler', html: renderSektorler(), ld: [
+        breadcrumbLd([['Ana Sayfa', BASE], ['Sektörler', `${BASE}/sektorler/`]]),
+        {
+            '@context': 'https://schema.org', '@type': 'ItemList', name: 'Sektör Çözümleri',
+            itemListElement: industries.map((ind, i) => ({
+                '@type': 'ListItem', position: i + 1, name: ind.name, url: `${BASE}/sektorler/${ind.slug}/`
+            }))
+        }
+    ] },
+    ...industries.map(ind => ({
+        path: `sektorler/${ind.slug}`, html: renderSektorlerDetay(ind.slug),
+        ld: [
+            {
+                '@context': 'https://schema.org', '@type': 'Service',
+                name: `${ind.name} için yazılım ve otomasyon`,
+                description: sektorSeo[ind.slug]?.desc || ind.headline,
+                provider: { '@type': 'Organization', name: 'yaptir.io', url: BASE },
+                url: `${BASE}/sektorler/${ind.slug}/`,
+                areaServed: 'TR',
+                availableChannel: { '@type': 'ServiceChannel', serviceUrl: `${BASE}/iletisim/` }
+            },
+            breadcrumbLd([['Ana Sayfa', BASE], ['Sektörler', `${BASE}/sektorler/`], [ind.name, `${BASE}/sektorler/${ind.slug}/`]])
+        ]
+    })),
     ...projects.map(p => ({
         path: `projeler/${p.slug}`, html: renderProjelerDetay(p.slug),
         ogImage: `${BASE}${p.image}`,
@@ -259,6 +284,10 @@ ${s.bullets.map(b => `- ${b}`).join('\n')}
 
 Beklenen sonuçlar: ${s.results.map(([v, l]) => `${l}: ${v}`).join(' · ')}
 ${s.faq ? `\nSık sorulanlar:\n${s.faq.map(([q, a]) => `- S: ${q}\n  C: ${a}`).join('\n')}` : ''}`).join('\n\n')}
+
+## Sektör çözümleri
+
+${industries.map(ind => `- ${ind.name} (${BASE}/sektorler/${ind.slug}/): ${sektorSeo[ind.slug]?.desc || ind.headline}`).join('\n')}
 
 ## Projeler
 

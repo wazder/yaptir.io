@@ -1,4 +1,4 @@
-import { services, projects } from './data.js'
+import { services, projects, industries, sektorSeo } from './data.js'
 
 const BASE = 'https://yaptir.io'
 
@@ -13,6 +13,15 @@ export function metaFor(path) {
             title: s.seo?.title || `${s.title} — yaptir.io`,
             description: (s.seo?.desc || `${s.long} ${s.short}`).slice(0, 158),
             canonical: `${BASE}/hizmetler/${slug}/`
+        }
+    }
+    if (base === 'sektorler' && slug) {
+        const m = sektorSeo[slug]
+        const ind = industries.find(x => x.slug === slug)
+        if (m && ind) return {
+            title: m.title,
+            description: m.desc.slice(0, 158),
+            canonical: `${BASE}/sektorler/${slug}/`
         }
     }
     if (base === 'projeler' && slug) {
@@ -39,6 +48,10 @@ export function metaFor(path) {
         projeler: {
             title: 'Projeler & Referanslar — Gerçek İşler, Ölçülü Sonuçlar | yaptir.io',
             description: 'MUUS PRO, SSW, RetroLokal, NEST ve DRV-E — kafeden nörobilime farklı sektörlerde canlıya aldığımız gerçek projeler, ekran görüntüleri ve ölçülebilir sonuçlarıyla.'
+        },
+        sektorler: {
+            title: 'Sektörler — Restoran, E-ticaret, Klinik, Otel Yazılımları | yaptir.io',
+            description: 'Restoran, e-ticaret, klinik, kuaför, emlak, hukuk, fitness, eğitim ve otel — 9 sektöre özel yazılım, otomasyon ve chatbot çözümleri. Sektörünüzü seçin.'
         },
         hakkimizda: {
             title: 'Hakkımızda — İstanbul Merkezli Yazılım & AI Ekibi | yaptir.io',
