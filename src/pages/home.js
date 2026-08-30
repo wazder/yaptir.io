@@ -1,4 +1,4 @@
-import { referanslar, services, testimonials } from '../data.js'
+import { referanslar, services, testimonials, projects } from '../data.js'
 import { icon } from '../utils/icons.js'
 import { marqueeHTML } from '../components/marquee.js'
 import { initHeroField } from '../components/heroField.js'
@@ -104,7 +104,7 @@ export function renderHome() {
                     </figure>
                 `).join('')}
                 <a class="testimonial-card testimonial-card--cta reveal" href="/projeler">
-                    <span class="testimonial-cta-num">5</span>
+                    <span class="testimonial-cta-num">${projects.length}</span>
                     <span class="testimonial-cta-text">tamamlanmış projeyi ekran görüntüleri ve sonuçlarıyla inceleyin</span>
                     <span class="link-arrow">Projelere git ${icon('arrow')}</span>
                 </a>

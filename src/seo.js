@@ -54,7 +54,7 @@ export function metaFor(path) {
         },
         projeler: {
             title: 'Projeler & Referanslar — Gerçek İşler, Ölçülü Sonuçlar | yaptir.io',
-            description: 'MUUS PRO, SSW, RetroLokal, NEST ve DRV-E — kafeden nörobilime farklı sektörlerde canlıya aldığımız gerçek projeler, ekran görüntüleri ve ölçülebilir sonuçlarıyla.'
+            description: 'Soylu Dekora Stok Takip, MUUS PRO, SSW, RetroLokal, NEST ve DRV-E — farklı sektörlerde geliştirdiğimiz gerçek yazılım projeleri, ekran görüntüleri ve sonuçlarıyla.'
         },
         sektorler: {
             title: 'Sektörler — Restoran, E-ticaret, Klinik, Otel Yazılımları | yaptir.io',

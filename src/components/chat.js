@@ -53,7 +53,7 @@ const RULES = [
       reply: 'AI Otomasyon, Özel Yazılım, Veri & Analitik, Entegrasyon, Chatbot & Asistan, Danışmanlık ve Sosyal Medya & Reklam olmak üzere 7 ana hizmet başlığımız var.',
       route: '/hizmetler', label: 'Hizmetleri incele' },
     { test: /proje|portf|örnek|iş\s?birliği/i,
-      reply: 'SSW, RetroLokal, NEST ve DRV-E gibi farklı sektörlerden tamamladığımız projelerimizi inceleyebilirsiniz.',
+      reply: 'Soylu Dekora Stok Takip, MUUS PRO, SSW, RetroLokal, NEST ve DRV-E gibi farklı sektörlerden projelerimizi inceleyebilirsiniz.',
       route: '/projeler', label: 'Projeleri incele' },
     { test: /teklif|fiyat|bütçe|ücret|maliyet|iletişim|görüş|demo/i,
       reply: 'Elbette! İhtiyacınızı dinleyip 24 saat içinde dönüş yapıyoruz. Teklif formunu doldurmanız yeterli.',

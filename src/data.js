@@ -456,6 +456,15 @@ export const testimonials = [
 
 export const projects = [
     {
+        slug: 'soylu-dekora-stok', letter: 'S', tag: 'STOK & OPERASYON YÖNETİMİ', year: '2026', title: 'Soylu Dekora Stok Takip',
+        image: '/projects/soylu-dekora-stok.png',
+        short: 'Depo ve mağaza operasyonlarını barkod, seri numarası ve yapay zekâ desteğiyle tek panelde yöneten PWA.',
+        client: 'Soylu Dekora', duration: 'Sürekli geliştirme',
+        problem: 'Mağaza ve depolardaki ürün giriş-çıkışları, seri numaraları, siparişler, müşteriler ve garanti süreçleri farklı kayıtlar üzerinden ilerliyor; güncel stok durumunu görmek ve operasyon hatalarını önlemek zorlaşıyordu.',
+        solution: 'Barkod ve seri numarasıyla stok hareketlerini anlık kaydeden, depo transferlerini ve siparişleri yöneten mobil uyumlu bir PWA geliştirdik. Yapay zekâ destekli etiket ve fatura okuma, kritik stok uyarıları, müşteri-garanti takibi ve Google Sheets eşitlemesiyle mağaza operasyonlarını tek panelde topladık.',
+        metrics: [['Platform', 'PWA'], ['Stok Hareketi', 'Anlık'], ['Ürün Girişi', 'AI Destekli']]
+    },
+    {
         slug: 'muus-pro', letter: 'M', tag: 'AI AGENT & KAFE YÖNETİMİ', year: '2026', title: 'MUUS PRO',
         image: '/projects/muuspro.webp', video: '/projects/muuspro-tour.mp4', url: 'https://muuspro.tr',
         short: 'Kafeler için yapay zeka destekli yönetim platformu — kasa, stok ve menüyü agent yönetir.',
