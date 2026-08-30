@@ -500,8 +500,8 @@ export const projects = [
 ]
 
 export const team = [
-    { initials: 'MS', name: 'Musa Soylu', role: 'Kurucu & CEO' },
-    { initials: 'NS', name: 'Nazlı Nehir Sertbaş', role: 'Co-Founder · Creative Art Direction Lead' },
+    { initials: 'NS', name: 'Nazlı Nehir Sertbaş', role: 'Kurucu & CEO' },
+    { initials: 'MS', name: 'Musa Soylu', role: 'Creative Art Direction Lead' },
     { initials: 'HT', name: 'Hasan Tatar', role: 'Yazılım Mühendisi' },
     { initials: 'UG', name: 'Umut Gökmen', role: 'Yazılım Mühendisi' },
     { initials: 'FB', name: 'Furkan Bora', role: 'Yazılım Mühendisi' }

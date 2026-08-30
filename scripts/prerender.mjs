@@ -34,8 +34,8 @@ const orgLd = {
     description: "KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri.",
     email: contact.email,
     founder: [
-        { '@type': 'Person', name: 'Musa Soylu', jobTitle: 'Kurucu & CEO' },
-        { '@type': 'Person', name: 'Nazlı Nehir Sertbaş', jobTitle: 'Co-Founder & Creative Art Direction Lead' }
+        { '@type': 'Person', name: 'Nazlı Nehir Sertbaş', jobTitle: 'Kurucu & CEO' },
+        { '@type': 'Person', name: 'Musa Soylu', jobTitle: 'Creative Art Direction Lead' }
     ],
     knowsAbout: [
         'yapay zeka otomasyonu', 'chatbot geliştirme', 'WhatsApp chatbot', 'özel yazılım',

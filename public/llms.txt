@@ -4,7 +4,7 @@ Tam içerik dökümü: https://yaptir.io/llms-full.txt
 
 > KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri üreten İstanbul merkezli bir teknoloji stüdyosu. Fikirden canlı ürüne uçtan uca geliştirme. Marka adı Türkçe "yaptır" fiilinden gelir: yazılım yaptırmak, chatbot yaptırmak, otomasyon yaptırmak isteyen işletmeler için tek adres.
 
-yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk bürosu, fitness, eğitim ve otel & konaklama sektörlerine özel çözümler sunar. Adisyo, Yemeksepeti, Getir, Trendyol, Shopify, Booking.com, Airbnb ve UYAP gibi platformlarla entegrasyon deneyimi vardır. Kurucular: Musa Soylu (Kurucu & CEO) ve Nazlı Nehir Sertbaş (Co-Founder & Creative Art Direction Lead).
+yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk bürosu, fitness, eğitim ve otel & konaklama sektörlerine özel çözümler sunar. Adisyo, Yemeksepeti, Getir, Trendyol, Shopify, Booking.com, Airbnb ve UYAP gibi platformlarla entegrasyon deneyimi vardır. Kurucu & CEO: Nazlı Nehir Sertbaş; Creative Art Direction Lead: Musa Soylu.
 
 ## Hizmetler
 

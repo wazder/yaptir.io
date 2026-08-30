@@ -55,7 +55,7 @@ export function metaFor(path) {
         },
         hakkimizda: {
             title: 'Hakkımızda — İstanbul Merkezli Yazılım & AI Ekibi | yaptir.io',
-            description: 'Musa Soylu (Kurucu & CEO) liderliğindeki İstanbul merkezli ekip: yapay zeka mühendisliği, full-stack geliştirme ve kreatif yönetim tek çatıda. Önce dinle, sonra çöz.'
+            description: 'Nazlı Nehir Sertbaş (Kurucu & CEO) liderliğindeki İstanbul merkezli ekip: yapay zeka mühendisliği, full-stack geliştirme ve kreatif yönetim tek çatıda. Önce dinle, sonra çöz.'
         },
         iletisim: {
             title: 'Teklif Al — Yazılım, Chatbot, Otomasyon Fiyat Teklifi | yaptir.io',
