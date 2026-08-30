@@ -10,40 +10,43 @@ export function metaFor(path) {
     if (base === 'hizmetler' && slug) {
         const s = services.find(x => x.id === slug)
         if (s) return {
-            title: `${s.title} — yaptir.io`,
-            description: `${s.long} ${s.short}`.slice(0, 158),
+            title: s.seo?.title || `${s.title} — yaptir.io`,
+            description: (s.seo?.desc || `${s.long} ${s.short}`).slice(0, 158),
             canonical: `${BASE}/hizmetler/${slug}`
         }
     }
     if (base === 'projeler' && slug) {
         const p = projects.find(x => x.slug === slug)
         if (p) return {
-            title: `${p.title} — Proje | yaptir.io`,
+            title: `${p.title} — ${p.client || 'Proje'} Referansı | yaptir.io`,
             description: p.short.slice(0, 158),
             canonical: `${BASE}/projeler/${slug}`
         }
     }
 
+    /* "yaptır" markanın kendisi aynı zamanda arama niyeti taşıyan bir fiil:
+       "chatbot yaptır", "yazılım yaptırmak istiyorum" gibi sorgular doğrudan
+       marka+niyet eşleşmesi kurar — başlıklar bu kalıba göre yazıldı. */
     const pages = {
         '': {
-            title: 'yaptir.io — KOBİ\'ler için Yapay Zeka Otomasyonu ve Özel Yazılım',
-            description: 'Restoran, e-ticaret, klinik ve 9 sektöre özel yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri. Fikirden canlı ürüne — teklif almak 5 dakika.'
+            title: 'Yazılım Yaptır — Yapay Zeka Otomasyonu, Chatbot & Özel Yazılım | yaptir.io',
+            description: 'İşini büyütmek isteyen KOBİ\'ler için İstanbul merkezli yazılım stüdyosu: yapay zeka otomasyonu, WhatsApp chatbot, özel yazılım ve entegrasyon yaptırın. Teklif 24 saatte.'
         },
         hizmetler: {
-            title: 'Hizmetlerimiz — AI Otomasyon, Özel Yazılım, Chatbot | yaptir.io',
-            description: 'AI otomasyon, özel yazılım, veri & analitik, entegrasyon, chatbot, danışmanlık ve sosyal medya yönetimi — işletmenize uçtan uca çözümler.'
+            title: 'Hizmetler — AI Otomasyon, Chatbot, Özel Yazılım Yaptır | yaptir.io',
+            description: 'Yapay zeka otomasyonu, özel yazılım, chatbot, veri analitiği, API entegrasyonu, danışmanlık ve reklam yönetimi. Ne yaptırmak istediğinizi seçin, gerisini biz kuralım.'
         },
         projeler: {
-            title: 'Projelerimiz — Başarı Hikayeleri | yaptir.io',
-            description: 'MUUS PRO, SSW, RetroLokal, NEST ve DRV-E — farklı sektörlerde hayata geçirdiğimiz gerçek projeler, ekran görüntüleri ve ölçülebilir sonuçlarıyla.'
+            title: 'Projeler & Referanslar — Gerçek İşler, Ölçülü Sonuçlar | yaptir.io',
+            description: 'MUUS PRO, SSW, RetroLokal, NEST ve DRV-E — kafeden nörobilime farklı sektörlerde canlıya aldığımız gerçek projeler, ekran görüntüleri ve ölçülebilir sonuçlarıyla.'
         },
         hakkimizda: {
-            title: 'Hakkımızda — Ekibimiz ve Çalışma Şeklimiz | yaptir.io',
-            description: 'Yapay zeka mühendisleri ve full-stack geliştiricilerden oluşan ekibimiz, her projeye iş ortağı gözüyle yaklaşır. Önce dinle, sonra anla, en son çöz.'
+            title: 'Hakkımızda — İstanbul Merkezli Yazılım & AI Ekibi | yaptir.io',
+            description: 'Musa Soylu (Kurucu & CEO) liderliğindeki İstanbul merkezli ekip: yapay zeka mühendisliği, full-stack geliştirme ve kreatif yönetim tek çatıda. Önce dinle, sonra çöz.'
         },
         iletisim: {
-            title: 'İletişim — Teklif Alın | yaptir.io',
-            description: 'Projeniz için 24 saat içinde dönüş: teklif formu, info@yaptir.io, Cihangir/İstanbul. İlk görüşme ücretsiz.'
+            title: 'Teklif Al — Yazılım, Chatbot, Otomasyon Fiyat Teklifi | yaptir.io',
+            description: 'Yazılım veya chatbot yaptırmak mı istiyorsunuz? Formu doldurun, 24 saat içinde net teklif alın. İlk görüşme ücretsiz — info@yaptir.io, Cihangir/İstanbul.'
         }
     }
     const m = pages[base] || pages['']

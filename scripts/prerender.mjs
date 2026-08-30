@@ -17,7 +17,7 @@ const { renderProjelerDetay } = await import('../src/pages/projelerDetay.js')
 const { renderHakkimizda } = await import('../src/pages/hakkimizda.js')
 const { renderIletisim } = await import('../src/pages/iletisim.js')
 const { metaFor } = await import('../src/seo.js')
-const { services, projects, contact } = await import('../src/data.js')
+const { services, projects, contact, faqGenel } = await import('../src/data.js')
 
 const BASE = 'https://yaptir.io'
 
@@ -25,11 +25,23 @@ const orgLd = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'yaptir.io',
+    alternateName: ['yaptir', 'Yaptır', 'yaptir io'],
+    slogan: 'Bugün senin için ne yaptırıyoruz?',
     url: BASE,
     logo: `${BASE}/favicon.png`,
     image: `${BASE}/og.jpg`,
     description: "KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri.",
     email: contact.email,
+    founder: [
+        { '@type': 'Person', name: 'Musa Soylu', jobTitle: 'Kurucu & CEO' },
+        { '@type': 'Person', name: 'Nazlı Nehir Sertbaş', jobTitle: 'Co-Founder & Creative Art Direction Lead' }
+    ],
+    knowsAbout: [
+        'yapay zeka otomasyonu', 'chatbot geliştirme', 'WhatsApp chatbot', 'özel yazılım',
+        'web uygulaması geliştirme', 'mobil uygulama', 'API entegrasyonu', 'veri analitiği',
+        'dashboard', 'e-ticaret entegrasyonu', 'dijital dönüşüm danışmanlığı', 'Meta reklam yönetimi'
+    ],
+    priceRange: '₺₺',
     address: {
         '@type': 'PostalAddress',
         streetAddress: 'Cihangir, Oba Sk. No: 2 D:B',
@@ -47,10 +59,23 @@ function serviceLd(s) {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: s.title,
-        description: s.long,
+        description: s.seo?.desc || s.long,
         provider: { '@type': 'Organization', name: 'yaptir.io', url: BASE },
         url: `${BASE}/hizmetler/${s.id}`,
-        areaServed: 'TR'
+        areaServed: 'TR',
+        availableChannel: { '@type': 'ServiceChannel', serviceUrl: `${BASE}/iletisim` }
+    }
+}
+
+function faqLd(faqs) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(([q, a]) => ({
+            '@type': 'Question',
+            name: q,
+            acceptedAnswer: { '@type': 'Answer', text: a }
+        }))
     }
 }
 
@@ -66,15 +91,20 @@ function breadcrumbLd(items) {
 
 const routes = [
     { path: '', html: renderHome(), ld: [orgLd, {
-        '@context': 'https://schema.org', '@type': 'WebSite', name: 'yaptir.io', url: BASE
+        '@context': 'https://schema.org', '@type': 'WebSite', name: 'yaptir.io',
+        alternateName: 'Yaptır', url: BASE, inLanguage: 'tr'
     }] },
     { path: 'hizmetler', html: renderHizmetler(), ld: [breadcrumbLd([['Ana Sayfa', BASE], ['Hizmetler', `${BASE}/hizmetler`]])] },
     { path: 'projeler', html: renderProjeler(), ld: [breadcrumbLd([['Ana Sayfa', BASE], ['Projeler', `${BASE}/projeler`]])] },
     { path: 'hakkimizda', html: renderHakkimizda(), ld: [orgLd] },
-    { path: 'iletisim', html: renderIletisim(), ld: [orgLd] },
+    { path: 'iletisim', html: renderIletisim(), ld: [orgLd, faqLd(faqGenel)] },
     ...services.map(s => ({
         path: `hizmetler/${s.id}`, html: renderHizmetlerDetay(s.id),
-        ld: [serviceLd(s), breadcrumbLd([['Ana Sayfa', BASE], ['Hizmetler', `${BASE}/hizmetler`], [s.title, `${BASE}/hizmetler/${s.id}`]])]
+        ld: [
+            serviceLd(s),
+            ...(s.faq ? [faqLd(s.faq)] : []),
+            breadcrumbLd([['Ana Sayfa', BASE], ['Hizmetler', `${BASE}/hizmetler`], [s.title, `${BASE}/hizmetler/${s.id}`]])
+        ]
     })),
     ...projects.map(p => ({
         path: `projeler/${p.slug}`, html: renderProjelerDetay(p.slug),

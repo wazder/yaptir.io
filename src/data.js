@@ -206,6 +206,16 @@ export const services = [
             ['Restoran & Kafe', 'Fatura ve stok takibini otomatikleştirin, masaya değil hesaba odaklanın.'],
             ['E-ticaret', 'Sipariş onayı ve kargo bildirimi tek tık, elle uğraşmayın.'],
             ['Klinik & Güzellik', 'Randevu hatırlatma ve faturalama kendi kendine işlesin.']
+        ],
+        seo: {
+            title: 'Yapay Zeka Otomasyonu Yaptır — İş Süreçleri Otomasyonu | yaptir.io',
+            desc: 'İşletmenize yapay zeka otomasyonu yaptırın: fatura/belge tanıma, e-posta yönlendirme, RPA ve iş akışı otomasyonu. %70\'e kadar zaman tasarrufu, ücretsiz ilk görüşme.'
+        },
+        faq: [
+            ['Yapay zeka otomasyonu yaptırmak ne kadar sürer?', 'Kapsama göre 2–6 hafta. İlk hafta süreçlerinizi analiz ediyor, en çok zaman yiyen işten başlayarak canlıya alıyoruz.'],
+            ['Hangi işler otomatikleştirilebilir?', 'Fatura ve belge işleme, e-posta/talep yönlendirme, stok ve sipariş takibi, raporlama, randevu hatırlatma — kural veya tekrar içeren hemen her süreç.'],
+            ['Mevcut programlarımızla çalışır mı?', 'Evet. Adisyo, Paraşüt, Logo, Trendyol, Shopify gibi kullandığınız araçlara API ile bağlanıyoruz; sistem değiştirmeniz gerekmez.'],
+            ['Otomasyon fiyatları neye göre belirlenir?', 'Otomatikleştirilecek süreç sayısına ve entegrasyon karmaşıklığına göre. İlk görüşme ücretsiz; net teklifi 24 saat içinde alırsınız.']
         ]
     },
     {
@@ -225,6 +235,16 @@ export const services = [
             ['Restoran & Kafe', 'Rezervasyon ve sipariş sisteminizi sıfırdan, size özel kuralım.'],
             ['E-ticaret', 'Ürün kataloğundan ödemeye, markanıza özel bir mağaza kuralım.'],
             ['Klinik & Güzellik', 'Randevu ve hasta/müşteri takip sisteminizi size özel tasarlayalım.']
+        ],
+        seo: {
+            title: 'Özel Yazılım Yaptır — Web & Mobil Uygulama Geliştirme | yaptir.io',
+            desc: 'İşletmenize özel yazılım yaptırın: web uygulaması, mobil uygulama, kurumsal panel. 4–8 haftada teslim, kaynak kod %100 sizin. İstanbul merkezli, tüm Türkiye\'ye hizmet.'
+        },
+        faq: [
+            ['Özel yazılım yaptırmak ne kadara mal olur?', 'Kapsama göre değişir; iletişim sayfamızdaki bütçe aralıklarından fikir edinebilirsiniz. İlk görüşme ücretsiz, net teklif 24 saat içinde gelir.'],
+            ['Yazılım kaç haftada teslim edilir?', 'Ortalama 4–8 hafta. Her hafta çalışan bir demo görürsünüz; sona kadar kara kutu beklemezsiniz.'],
+            ['Kaynak kod bize ait olur mu?', 'Evet, %100. Teslimatta tüm kod, dokümantasyon ve altyapı erişimleri size devredilir; bize bağımlı kalmazsınız.'],
+            ['Hazır paket varken neden özel yazılım yaptırayım?', 'Hazır paketler ortalamaya göre tasarlanır; özel yazılım sizin sürecinize birebir oturur, aylık kullanıcı aidatı ödemezsiniz ve rakibinizde aynısı yoktur.']
         ]
     },
     {
@@ -244,6 +264,16 @@ export const services = [
             ['Restoran & Kafe', 'En çok satan menüyü, boşa giden stoku ortaya çıkarın.'],
             ['E-ticaret', 'Hangi ürün ne zaman satılıyor, anlık görün.'],
             ['Klinik & Güzellik', 'Hangi hizmet en çok tercih ediliyor, doluluk oranınızı görün.']
+        ],
+        seo: {
+            title: 'Veri Analitiği & Dashboard Yaptır — Raporlama Sistemleri | yaptir.io',
+            desc: 'Satış ve operasyon verinizi tek ekranda gösteren dashboard yaptırın: gerçek zamanlı raporlama, talep tahminleme, stok optimizasyonu. Excel karmaşasına son.'
+        },
+        faq: [
+            ['Dashboard yaptırmak için elimizde ne olması gerekir?', 'Kullandığınız sistemler yeterli — kasa, e-ticaret paneli, Excel dosyaları. Veriyi biz bağlar, temizler ve tek ekranda toplarız.'],
+            ['Excel\'den tamamen kurtulabilir miyiz?', 'Evet. Elle tuttuğunuz raporlar otomatik akmaya başlar; Excel yalnızca isterseniz dışa aktarma formatı olarak kalır.'],
+            ['Raporlar ne sıklıkla güncellenir?', 'Kaynağa göre gerçek zamanlı veya günlük. Satış gibi kritik metrikler anlık, muhasebe kalemleri günlük senkronla akar.'],
+            ['Verilerimiz güvende olur mu?', 'Veri sizin altyapınızda veya size ait bulut hesabında tutulur; erişim yetkileri ve şifreleme baştan kurgulanır.']
         ]
     },
     {
@@ -263,6 +293,16 @@ export const services = [
             ['Restoran & Kafe', 'Yemek Sepeti, Getir ve kasa sisteminizi birbirine bağlayın.'],
             ['E-ticaret', "Shopify, kargo ve muhasebe sisteminizi birbirine bağlayın."],
             ['Klinik & Güzellik', 'Randevu sisteminizi SMS ve e-postayla otomatik konuştur.']
+        ],
+        seo: {
+            title: 'API Entegrasyonu Yaptır — Trendyol, Shopify, Paraşüt Senkronu | yaptir.io',
+            desc: 'Sistemlerinizi birbirine bağlatın: Trendyol, Hepsiburada, Shopify, Yemeksepeti, Getir, Adisyo, Paraşüt, kargo ve muhasebe entegrasyonu. Stok bir yerden, her yerde güncel.'
+        },
+        faq: [
+            ['Hangi platformlarla entegrasyon yapıyorsunuz?', 'Trendyol, Hepsiburada, Shopify, Yemeksepeti, Getir, Adisyo, Paraşüt, Logo, iyzico, kargo firmaları ve API sunan hemen her servis.'],
+            ['API\'si olmayan eski bir sistemimiz var, bağlanır mı?', 'Çoğu zaman evet — RPA veya veri katmanı üzerinden köprü kurar, gerekirse eski sistemi adım adım modernize ederiz.'],
+            ['Entegrasyon kurulumu ne kadar sürer?', 'Tekil bir bağlantı genellikle 1–2 hafta; çok kanallı stok/sipariş senkronu 3–4 hafta. Canlıya geçmeden test ortamında doğrularız.'],
+            ['Senkron koparsa ne oluyor?', 'İzleme ve uyarı sistemi kurarız: kopan bağlantı size düşmeden bize bildirim düşer, kuyruktaki veri kaybolmaz.']
         ]
     },
     {
@@ -282,6 +322,16 @@ export const services = [
             ['Restoran & Kafe', "Rezervasyonları WhatsApp'tan otomatik alın."],
             ['E-ticaret', 'Kargo durumu sorularını bota bırakın, ekibiniz asıl işe odaklansın.'],
             ['Klinik & Güzellik', 'Randevu almayı 7/24 kesintisiz hâle getirin.']
+        ],
+        seo: {
+            title: 'Chatbot Yaptır — WhatsApp & Instagram Botu Geliştirme | yaptir.io',
+            desc: 'İşletmenize chatbot yaptırın: WhatsApp, Instagram ve web sitenizde 7/24 Türkçe yanıt veren yapay zeka asistanı. %85+ çözüm oranı, 3 saniyeden kısa yanıt.'
+        },
+        faq: [
+            ['WhatsApp chatbot yaptırmak ne kadar sürer?', 'Standart bir müşteri hizmetleri veya rezervasyon botu 1–3 haftada canlıda olur; ilk hafta demo görürsünüz.'],
+            ['Bot Türkçe\'yi gerçekten anlıyor mu?', 'Evet. Kalıp cevaplı eski botlar değil, doğal dil işleyen güncel yapay zeka modelleri kullanıyoruz; yazım hatalı mesajları bile anlar.'],
+            ['Bot cevap veremezse ne olur?', 'Konuşmayı özetiyle birlikte ekibinize devreder; müşteri asla cevapsız kalmaz. Devir kurallarını siz belirlersiniz.'],
+            ['Chatbot fiyatları ne kadar?', 'Kanal sayısına (web/WhatsApp/Instagram) ve bağlanacak sistemlere göre değişir. İlk görüşme ücretsiz; 24 saat içinde net teklif alırsınız.']
         ]
     },
     {
@@ -301,6 +351,15 @@ export const services = [
             ['Restoran & Kafe', 'Şube büyümenize uygun teknoloji yol haritası çıkaralım.'],
             ['E-ticaret', 'Ölçeklenme için doğru teknolojiyi doğru zamanda seçelim.'],
             ['Klinik & Güzellik', 'Dijitalleşme sürecinizi baştan sona planlayalım.']
+        ],
+        seo: {
+            title: 'Yazılım & Dijital Dönüşüm Danışmanlığı — Yol Haritası | yaptir.io',
+            desc: 'KOBİ\'nize dijital dönüşüm yol haritası çıkartın: altyapı denetimi, teknoloji seçimi, süreç optimizasyonu ve ekip eğitimi. İlk yol haritası 2 haftada elinizde.'
+        },
+        faq: [
+            ['Danışmanlık süreci nasıl işliyor?', 'Önce mevcut araçlarınızı ve süreçlerinizi denetliyoruz; 2 hafta içinde öncelik sıralı bir yol haritası teslim ediyoruz. Uygulamayı biz de yapabiliriz, kendi ekibiniz de.'],
+            ['Küçük bir işletmeyiz, danışmanlık bize fazla gelmez mi?', 'Tam tersi — en büyük kazanım küçük ekiplerde çıkıyor. Amaç size yazılım satmak değil, yanlış araca para harcamanızı engellemek.'],
+            ['Yol haritasını alıp başkasıyla çalışabilir miyiz?', 'Evet. Rapor tamamen size aittir; teknoloji önerilerimiz markadan bağımsızdır ve herhangi bir ekiple uygulanabilir.']
         ]
     },
     {
@@ -320,6 +379,15 @@ export const services = [
             ['Restoran & Kafe', 'Yerel çevrenizdeki müşteriye otomatik reklam gösterin.'],
             ['E-ticaret', 'Bütçenizi en çok satan ürüne otomatik kaydırın.'],
             ['Klinik & Güzellik', 'Randevu boşluklarına göre otomatik kampanya başlatın.']
+        ],
+        seo: {
+            title: 'Sosyal Medya & Reklam Yönetimi — Meta, Instagram Reklamları | yaptir.io',
+            desc: 'Meta ve Instagram reklamlarınızı yapay zeka destekli yönettirin: otomatik bütçe optimizasyonu, A/B testleri, içerik takvimi. Ortalama 3.5x ROAS, haftalık rapor.'
+        },
+        faq: [
+            ['Reklam bütçemizi siz mi yönetiyorsunuz?', 'Kampanyaları biz kurar ve optimize ederiz; bütçe kendi reklam hesabınızdan harcanır, kontrol her zaman sizde kalır.'],
+            ['Sonuçları nasıl ölçüyorsunuz?', 'Tıklama değil dönüşüm sayarız: satış, rezervasyon, randevu. ROAS\'ı haftalık raporda kuruşu kuruşuna görürsünüz.'],
+            ['Minimum reklam bütçesi ne olmalı?', 'Sektöre göre değişir; ilk görüşmede hedeflerinize göre gerçekçi bir başlangıç bütçesi öneririz, olmayacak işe bütçe yaktırmayız.']
         ]
     }
 ]
@@ -381,11 +449,22 @@ export const projects = [
 ]
 
 export const team = [
-    { initials: 'MS', name: 'Musa Soylu', role: 'Yazılım Mühendisi' },
-    { initials: 'NS', name: 'Nazlı Nehir Sertbaş', role: 'Proje Yöneticisi' },
-    { initials: 'HT', name: 'Hasan Tatar', role: 'Kurucu & CEO' },
-    { initials: 'UG', name: 'Umut Gökmen', role: 'Co-Founder & CTO' },
+    { initials: 'MS', name: 'Musa Soylu', role: 'Kurucu & CEO' },
+    { initials: 'NS', name: 'Nazlı Nehir Sertbaş', role: 'Co-Founder · Creative Art Direction Lead' },
+    { initials: 'HT', name: 'Hasan Tatar', role: 'Yazılım Mühendisi' },
+    { initials: 'UG', name: 'Umut Gökmen', role: 'Yazılım Mühendisi' },
     { initials: 'FB', name: 'Furkan Bora', role: 'Yazılım Mühendisi' }
+]
+
+/* İletişim sayfasındaki genel SSS — uzun kuyruklu arama niyetlerini
+   ("yazılım yaptırmak ne kadar", "teklif ücretli mi") görünür içerik +
+   FAQPage şemasıyla yakalamak için. */
+export const faqGenel = [
+    ['Teklif almak ücretli mi?', 'Hayır. İlk görüşme ve keşif tamamen ücretsiz; formu doldurduktan sonra 24 saat içinde dönüş yapıyoruz.'],
+    ['Yazılım yaptırmak ne kadar sürer?', 'Chatbot ve otomasyon işleri genellikle 1–3 hafta, özel yazılım projeleri ortalama 4–8 hafta. Her hafta çalışan bir demo görürsünüz.'],
+    ['Fiyatlar neye göre belirleniyor?', 'Kapsama göre: ekran/süreç sayısı, entegrasyonlar ve teslim süresi. Sabit fiyatlı teklif veririz; proje ortasında sürpriz maliyet çıkmaz.'],
+    ['Proje bittikten sonra destek veriyor musunuz?', 'Evet. Bakım, performans izleme ve yeni özellik geliştirme için destek planlarımız var; kaynak kod yine de %100 sizde kalır.'],
+    ['İstanbul dışındayız, çalışabilir miyiz?', 'Elbette. Ofisimiz İstanbul Cihangir\'de ama projelerin çoğunu uzaktan yürütüyoruz; tüm Türkiye\'ye ve yurt dışına hizmet veriyoruz.']
 ]
 
 export const process = [

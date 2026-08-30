@@ -1,8 +1,8 @@
 # yaptir.io
 
-> KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri üreten İstanbul merkezli bir teknoloji stüdyosu. Fikirden canlı ürüne uçtan uca geliştirme.
+> KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri üreten İstanbul merkezli bir teknoloji stüdyosu. Fikirden canlı ürüne uçtan uca geliştirme. Marka adı Türkçe "yaptır" fiilinden gelir: yazılım yaptırmak, chatbot yaptırmak, otomasyon yaptırmak isteyen işletmeler için tek adres.
 
-yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk bürosu, fitness, eğitim ve otel & konaklama sektörlerine özel çözümler sunar. Adisyo, Yemeksepeti, Getir, Trendyol, Shopify, Booking.com, Airbnb ve UYAP gibi platformlarla entegrasyon deneyimi vardır.
+yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk bürosu, fitness, eğitim ve otel & konaklama sektörlerine özel çözümler sunar. Adisyo, Yemeksepeti, Getir, Trendyol, Shopify, Booking.com, Airbnb ve UYAP gibi platformlarla entegrasyon deneyimi vardır. Kurucular: Musa Soylu (Kurucu & CEO) ve Nazlı Nehir Sertbaş (Co-Founder & Creative Art Direction Lead).
 
 ## Hizmetler
 
@@ -21,6 +21,13 @@ yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk
 - [RetroLokal](https://yaptir.io/projeler/retrolokal): Vintage ürünler pazar yeri. Canlı: https://retrolokal.com
 - [NEST](https://yaptir.io/projeler/nest): EEG veri analizi ve nörobilim araştırma platformu.
 - [DRV-E](https://yaptir.io/projeler/drv-e): Elektrik saha işleri takip paneli — %40 ekip verimliliği artışı.
+
+## Sık sorulanlar (özet)
+
+- Teklif almak ücretsizdir; forma yazıldıktan sonra 24 saat içinde dönüş yapılır.
+- Chatbot/otomasyon işleri genellikle 1–3 hafta, özel yazılım projeleri 4–8 haftada teslim edilir.
+- Kaynak kod %100 müşteriye aittir; teslim sonrası bakım ve geliştirme desteği verilir.
+- Ofis İstanbul'dadır; projeler uzaktan yürütülür, tüm Türkiye'ye ve yurt dışına hizmet verilir.
 
 ## İletişim
 

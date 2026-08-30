@@ -1093,6 +1093,60 @@ p {
     font-size: 15px;
 }
 
+/* SSS — hizmet detay + iletişim */
+.service-tags + .svc-detail-subhead { margin-top: 48px; }
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.faq-list--wide {
+    max-width: 760px;
+    margin-top: 40px;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-chevron {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: var(--muted);
+    transform: rotate(90deg);
+    transition: transform 0.25s ease;
+}
+
+.faq-chevron svg { width: 100%; height: 100%; }
+
+.faq-item[open] .faq-chevron { transform: rotate(-90deg); }
+
+.faq-item > p {
+    margin: 0;
+    padding: 0 0 20px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 640px;
+}
+
 .svc-check-icon {
     width: 20px;
     height: 20px;

@@ -36,6 +36,17 @@ export function renderHizmetlerDetay(slug) {
                 <div class="service-tags">
                     ${s.tags.map(t => `<span>${t}</span>`).join('')}
                 </div>
+
+                ${s.faq ? `
+                <h3 class="svc-detail-subhead">Sık Sorulan Sorular</h3>
+                <div class="faq-list">
+                    ${s.faq.map(([q, a]) => `
+                        <details class="faq-item">
+                            <summary>${q}<span class="faq-chevron">${icon('arrow')}</span></summary>
+                            <p>${a}</p>
+                        </details>
+                    `).join('')}
+                </div>` : ''}
             </div>
 
             <div class="svc-detail-side reveal">

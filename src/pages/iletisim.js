@@ -1,4 +1,4 @@
-import { contact, services } from '../data.js'
+import { contact, services, faqGenel } from '../data.js'
 import { icon } from '../utils/icons.js'
 
 export function renderIletisim() {
@@ -92,6 +92,21 @@ export function renderIletisim() {
                     </button>
                     <p class="form-msg" data-form-msg></p>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--tight">
+        <div class="container">
+            <span class="eyebrow eyebrow--accent">SSS</span>
+            <h2 class="section-title">Sık sorulanlar<span class="dot">.</span></h2>
+            <div class="faq-list faq-list--wide">
+                ${faqGenel.map(([q, a]) => `
+                    <details class="faq-item">
+                        <summary>${q}<span class="faq-chevron">${icon('arrow')}</span></summary>
+                        <p>${a}</p>
+                    </details>
+                `).join('')}
             </div>
         </div>
     </section>
