@@ -24,6 +24,13 @@ export function metaFor(path) {
             canonical: `${BASE}/sektorler/${slug}/`
         }
     }
+    if (base === 'rehber' && slug === 'yazilim-yaptirma') {
+        return {
+            title: 'Yazılım Yaptırma Rehberi 2026 — Fiyatlar, Süreç, Dikkat Edilecekler | yaptir.io',
+            description: 'Yazılım yaptırmak isteyenler için dürüst rehber: fiyatı ne belirler, teklife hangi 5 soru sorulur, kaynak kod kimde kalmalı, süreç nasıl işler, en sık 4 hata.'.slice(0, 158),
+            canonical: `${BASE}/rehber/yazilim-yaptirma/`
+        }
+    }
     if (base === 'projeler' && slug) {
         const p = projects.find(x => x.slug === slug)
         if (p) return {

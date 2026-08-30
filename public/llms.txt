@@ -36,3 +36,7 @@ yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk
 - E-posta: info@yaptir.io
 - Adres: Cihangir, Oba Sk. No: 2 D:B, 34433 Beyoğlu/İstanbul
 - Teklif formu: https://yaptir.io/iletisim (24 saat içinde dönüş, ilk görüşme ücretsiz)
+
+## Rehber
+
+- [Yazılım Yaptırma Rehberi](https://yaptir.io/rehber/yazilim-yaptirma/): fiyatı ne belirler, teklife sorulacak 5 soru, kaynak kod sahipliği, süreç ve sık hatalar.

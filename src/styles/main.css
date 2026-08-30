@@ -1093,6 +1093,63 @@ p {
     font-size: 15px;
 }
 
+/* Rehber sayfaları */
+.rehber-content {
+    max-width: 760px;
+}
+
+.rehber-content h2 {
+    font-size: clamp(22px, 3vw, 28px);
+    margin: 56px 0 16px;
+}
+
+.rehber-content h2:first-child { margin-top: 0; }
+
+.rehber-content p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+.rehber-content p strong { color: var(--fg); }
+
+.rehber-content ol {
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.rehber-content ol li {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.rehber-content ol li strong { color: var(--fg); }
+
+.rehber-content .svc-detail-checklist { margin-bottom: 24px; }
+
+.rehber-cta {
+    margin-top: 56px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rehber-cta p {
+    margin: 0;
+    max-width: 480px;
+}
+
 /* SSS — hizmet detay + iletişim */
 .service-tags + .svc-detail-subhead { margin-top: 48px; }
 

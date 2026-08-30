@@ -17,6 +17,7 @@ const { renderProjelerDetay } = await import('../src/pages/projelerDetay.js')
 const { renderHakkimizda } = await import('../src/pages/hakkimizda.js')
 const { renderIletisim } = await import('../src/pages/iletisim.js')
 const { renderSektorler, renderSektorlerDetay } = await import('../src/pages/sektorler.js')
+const { renderRehber, REHBER_SSS } = await import('../src/pages/rehber.js')
 const { metaFor } = await import('../src/seo.js')
 const { services, projects, contact, faqGenel, team, process: surec, industries, sektorSeo } = await import('../src/data.js')
 
@@ -192,6 +193,21 @@ const routes = [
             breadcrumbLd([['Ana Sayfa', BASE], ['Sektörler', `${BASE}/sektorler/`], [ind.name, `${BASE}/sektorler/${ind.slug}/`]])
         ]
     })),
+    { path: 'rehber/yazilim-yaptirma', html: renderRehber('yazilim-yaptirma'), ld: [
+        {
+            '@context': 'https://schema.org', '@type': 'Article',
+            headline: 'Yazılım Yaptırma Rehberi: Fiyatlar, Süreç ve Dikkat Edilecekler',
+            description: 'Yazılım yaptırmak isteyen işletme sahipleri için dürüst rehber.',
+            author: { '@type': 'Organization', name: 'yaptir.io', url: BASE },
+            publisher: { '@type': 'Organization', name: 'yaptir.io', logo: { '@type': 'ImageObject', url: `${BASE}/favicon.png` } },
+            datePublished: '2026-08-30',
+            dateModified: new Date().toISOString().slice(0, 10),
+            mainEntityOfPage: `${BASE}/rehber/yazilim-yaptirma/`,
+            inLanguage: 'tr'
+        },
+        faqLd(REHBER_SSS),
+        breadcrumbLd([['Ana Sayfa', BASE], ['Rehber', `${BASE}/rehber/yazilim-yaptirma/`], ['Yazılım Yaptırma Rehberi', `${BASE}/rehber/yazilim-yaptirma/`]])
+    ] },
     ...projects.map(p => ({
         path: `projeler/${p.slug}`, html: renderProjelerDetay(p.slug),
         ogImage: `${BASE}${p.image}`,

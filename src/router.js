@@ -5,6 +5,7 @@ import { renderProjeler } from './pages/projeler.js'
 import { renderProjelerDetay } from './pages/projelerDetay.js'
 import { renderHakkimizda } from './pages/hakkimizda.js'
 import { renderSektorler, renderSektorlerDetay } from './pages/sektorler.js'
+import { renderRehber } from './pages/rehber.js'
 import { renderIletisim } from './pages/iletisim.js'
 import { initReveal } from './components/reveal.js'
 import { initContactForm } from './components/contactForm.js'
@@ -23,7 +24,8 @@ const routes = {
 const detailRoutes = {
     hizmetler: renderHizmetlerDetay,
     projeler: renderProjelerDetay,
-    sektorler: renderSektorlerDetay
+    sektorler: renderSektorlerDetay,
+    rehber: renderRehber
 }
 
 function currentPath() {
