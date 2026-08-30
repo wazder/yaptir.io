@@ -8,7 +8,7 @@ export function renderProjelerDetay(slug) {
         <section class="section" style="padding-top:160px">
             <div class="container">
                 <h1 class="section-title">Proje bulunamadı.</h1>
-                <a href="#/projeler" class="link-arrow">Projelere dön ${icon('arrow')}</a>
+                <a href="/projeler" class="link-arrow">Projelere dön ${icon('arrow')}</a>
             </div>
         </section>`
     }
@@ -18,7 +18,7 @@ export function renderProjelerDetay(slug) {
         <span class="intro-watermark project-detail-watermark">${p.letter}</span>
         <div class="container">
             <div class="project-detail-head">
-                <a href="#/projeler" class="link-arrow">${icon('arrow')} Tüm Projeler</a>
+                <a href="/projeler" class="link-arrow">${icon('arrow')} Tüm Projeler</a>
                 <span class="project-tag">${p.tag}</span>
             </div>
             <h1 class="section-title">${p.title}<span class="dot">.</span></h1>

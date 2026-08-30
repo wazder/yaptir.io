@@ -8,7 +8,7 @@ export function renderHizmetlerDetay(slug) {
         <section class="section" style="padding-top:160px">
             <div class="container">
                 <h1 class="section-title">Hizmet bulunamadı.</h1>
-                <a href="#/hizmetler" class="link-arrow">Hizmetlere dön ${icon('arrow')}</a>
+                <a href="/hizmetler" class="link-arrow">Hizmetlere dön ${icon('arrow')}</a>
             </div>
         </section>`
     }
@@ -17,7 +17,7 @@ export function renderHizmetlerDetay(slug) {
     <section class="section page-hero-grid" style="padding-top:160px;padding-bottom:0">
         <div class="intro-grid-pattern" aria-hidden="true"></div>
         <div class="container">
-            <a href="#/hizmetler" class="link-arrow svc-detail-back">${icon('arrow')} Tüm Hizmetler</a>
+            <a href="/hizmetler" class="link-arrow svc-detail-back">${icon('arrow')} Tüm Hizmetler</a>
             <div class="service-icon svc-detail-icon">${icon(s.icon)}</div>
             <span class="eyebrow">${s.num}</span>
             <h1 class="section-title">${s.title}<span class="dot">.</span></h1>
@@ -47,7 +47,7 @@ export function renderHizmetlerDetay(slug) {
                             <div class="svc-result-label">${label}</div>
                         </div>
                     `).join('')}
-                    <a href="#/iletisim" class="btn btn--primary" style="width:100%">Bu Hizmet İçin Teklif Al ${icon('arrow')}</a>
+                    <a href="/iletisim" class="btn btn--primary" style="width:100%">Bu Hizmet İçin Teklif Al ${icon('arrow')}</a>
                 </div>
             </div>
         </div>

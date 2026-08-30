@@ -8,6 +8,7 @@ import { renderIletisim } from './pages/iletisim.js'
 import { initReveal } from './components/reveal.js'
 import { initContactForm } from './components/contactForm.js'
 import { initStatCounters } from './components/statCounter.js'
+import { applyMeta } from './seo.js'
 
 const routes = {
     '': { render: renderHome, init: initHome, key: 'home' },
@@ -23,7 +24,12 @@ const detailRoutes = {
 }
 
 function currentPath() {
-    return window.location.hash.replace(/^#\/?/, '')
+    // Eski #/x bağlantıları hâlâ çalışsın: hash varsa path'e çevrilir.
+    const hash = window.location.hash.replace(/^#\/?/, '')
+    if (hash) {
+        window.history.replaceState({}, '', '/' + hash)
+    }
+    return window.location.pathname.replace(/^\/+|\/+$/g, '')
 }
 
 function setActiveNav(key) {
@@ -42,6 +48,8 @@ export function initRouter() {
     function paint() {
         const path = currentPath()
         const [base, slug] = path.split('/')
+
+        applyMeta(path)
 
         if (slug && detailRoutes[base]) {
             app.innerHTML = detailRoutes[base](slug)
@@ -74,6 +82,22 @@ export function initRouter() {
         }, 180)
     }
 
+    // Site içi <a href="/..."> tıklamalarını SPA geçişine çevir.
+    document.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+        const a = e.target.closest('a[href^="/"]')
+        if (!a || a.target === '_blank' || a.hasAttribute('download')) return
+        const href = a.getAttribute('href')
+        if (href.startsWith('/projects/')) return // statik dosyalar
+        e.preventDefault()
+        if (href !== window.location.pathname) {
+            window.history.pushState({}, '', href)
+            render()
+        }
+    })
+
+    window.addEventListener('popstate', () => render())
+    // Eski #/x linkleriyle gelenler için de dinle.
     window.addEventListener('hashchange', () => render())
     render({ transition: false })
 }

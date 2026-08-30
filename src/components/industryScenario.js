@@ -28,7 +28,7 @@ function scenarioBodyHTML(ind) {
             <div class="industry-scenario-services">
                 ${relatedNames.map(n => `<span>${n}</span>`).join('')}
             </div>
-            <a href="#/iletisim" class="link-arrow">Bize yazın ${icon('arrow')}</a>
+            <a href="/iletisim" class="link-arrow">Bize yazın ${icon('arrow')}</a>
         </div>
     `
 }

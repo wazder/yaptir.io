@@ -16,7 +16,7 @@ export function renderHizmetler() {
         <div class="container">
             <div class="service-list">
                 ${services.map(s => `
-                    <a class="service-row reveal" href="#/hizmetler/${s.id}">
+                    <a class="service-row reveal" href="/hizmetler/${s.id}">
                         <span class="service-row-num">${s.num}</span>
                         <div class="service-icon service-row-icon">${icon(s.icon)}</div>
                         <h3 class="service-row-title">${s.title}</h3>

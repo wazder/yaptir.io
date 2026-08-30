@@ -1,0 +1,29 @@
+# yaptir.io
+
+> KOBİ'ler için yapay zeka otomasyonu, chatbot ve özel yazılım çözümleri üreten İstanbul merkezli bir teknoloji stüdyosu. Fikirden canlı ürüne uçtan uca geliştirme.
+
+yaptir.io; restoran & kafe, e-ticaret, klinik & güzellik, kuaför, emlak, hukuk bürosu, fitness, eğitim ve otel & konaklama sektörlerine özel çözümler sunar. Adisyo, Yemeksepeti, Getir, Trendyol, Shopify, Booking.com, Airbnb ve UYAP gibi platformlarla entegrasyon deneyimi vardır.
+
+## Hizmetler
+
+- [AI Otomasyon](https://yaptir.io/hizmetler/ai-otomasyon): İş süreçlerini yapay zeka ile otomatikleştirme — OCR+NLP belge işleme, RPA, iş akışı otomasyonu. %70'e kadar zaman tasarrufu.
+- [Özel Yazılım](https://yaptir.io/hizmetler/ozel-yazilim): Web/mobil uygulamalar, kurumsal sistemler, mikroservis backend. 4-8 hafta ortalama teslim, kaynak kod müşterinin.
+- [Veri & Analitik](https://yaptir.io/hizmetler/veri-analitik): Gerçek zamanlı dashboard'lar, talep tahminleme, anomali tespiti.
+- [Entegrasyon](https://yaptir.io/hizmetler/entegrasyon): REST/GraphQL API, e-ticaret + kargo + muhasebe senkronizasyonu, legacy modernizasyon.
+- [Chatbot & Asistan](https://yaptir.io/hizmetler/chatbot): Web/WhatsApp/Telegram müşteri hizmetleri botları, %85+ çözüm oranı, <3sn yanıt.
+- [Danışmanlık](https://yaptir.io/hizmetler/danismanlik): Dijital dönüşüm yol haritası, teknoloji seçimi, ekip eğitimi.
+- [Sosyal Medya & Reklam](https://yaptir.io/hizmetler/sosyal-reklam): Meta/Instagram reklam yönetimi, AI bütçe optimizasyonu, ortalama 3.5x ROAS.
+
+## Projeler
+
+- [MUUS PRO](https://yaptir.io/projeler/muus-pro): Kafeler için AI agent tabanlı yönetim platformu (kasa, stok, menü). Canlı: https://muuspro.tr
+- [SSW](https://yaptir.io/projeler/ssw): Sahibinden.com veri toplama ve analiz platformu — %98 doğruluk, günlük 50K+ kayıt.
+- [RetroLokal](https://yaptir.io/projeler/retrolokal): Vintage ürünler pazar yeri. Canlı: https://retrolokal.com
+- [NEST](https://yaptir.io/projeler/nest): EEG veri analizi ve nörobilim araştırma platformu.
+- [DRV-E](https://yaptir.io/projeler/drv-e): Elektrik saha işleri takip paneli — %40 ekip verimliliği artışı.
+
+## İletişim
+
+- E-posta: info@yaptir.io
+- Adres: Cihangir, Oba Sk. No: 2 D:B, 34433 Beyoğlu/İstanbul
+- Teklif formu: https://yaptir.io/iletisim (24 saat içinde dönüş, ilk görüşme ücretsiz)

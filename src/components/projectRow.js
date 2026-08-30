@@ -1,6 +1,6 @@
 export function projectRowHTML(p) {
     return `
-    <a class="project-card reveal" href="#/projeler/${p.slug}">
+    <a class="project-card reveal" href="/projeler/${p.slug}">
         <div class="project-card-head">
             <span class="project-tag">${p.tag}</span>
             <span class="project-year">${p.year}</span>

@@ -22,7 +22,7 @@ function bodyHTML(s) {
             ${s.tags.map(t => `<span>${t}</span>`).join('')}
         </div>
 
-        <a href="#/iletisim" class="btn btn--primary" data-svc-modal-cta>Teklif Al ${icon('arrow')}</a>
+        <a href="/iletisim" class="btn btn--primary" data-svc-modal-cta>Teklif Al ${icon('arrow')}</a>
     `
 }
 

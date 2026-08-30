@@ -34,8 +34,8 @@ export function renderHome() {
                 <h2>İşinizi <span class="swash-underline gradient-orange">dönüştüren</span><br>teknoloji<span class="intro-dot">.</span></h2>
                 <p>Yapay zeka otomasyonları ve özel yazılım çözümleriyle işletmenizin süreçlerini hızlandırın, maliyetleri düşürün ve rekabet avantajı kazanın.</p>
                 <div class="cta-btn-row">
-                    <a href="#/iletisim" class="btn btn--primary">Projenizi Konuşalım ${icon('arrow')}</a>
-                    <a href="#/projeler" class="btn btn--outline">Projelerimiz ↗</a>
+                    <a href="/iletisim" class="btn btn--primary">Projenizi Konuşalım ${icon('arrow')}</a>
+                    <a href="/projeler" class="btn btn--outline">Projelerimiz ↗</a>
                 </div>
             </div>
             <div class="intro-stats">
@@ -71,7 +71,7 @@ export function renderHome() {
                     <span class="eyebrow">Hizmetlerimiz</span>
                     <h2 class="section-title">Ne yapıyoruz<span class="dot">?</span></h2>
                 </div>
-                <a href="#/hizmetler" class="link-arrow">Tüm hizmetler ${icon('arrow')}</a>
+                <a href="/hizmetler" class="link-arrow">Tüm hizmetler ${icon('arrow')}</a>
             </div>
             <div class="service-grid service-grid--compact">
                 ${services.map(s => `
@@ -103,7 +103,7 @@ export function renderHome() {
                         </figcaption>
                     </figure>
                 `).join('')}
-                <a class="testimonial-card testimonial-card--cta reveal" href="#/projeler">
+                <a class="testimonial-card testimonial-card--cta reveal" href="/projeler">
                     <span class="testimonial-cta-num">5</span>
                     <span class="testimonial-cta-text">tamamlanmış projeyi ekran görüntüleri ve sonuçlarıyla inceleyin</span>
                     <span class="link-arrow">Projelere git ${icon('arrow')}</span>
@@ -118,7 +118,7 @@ export function renderHome() {
                 <h2>Projenizi bugün konuşmaya başlayalım.</h2>
                 <p>Sektörünüze özel çözümü birlikte tasarlayalım — teklif almak 5 dakikanızı alır.</p>
             </div>
-            <a href="#/iletisim" class="btn" style="background:#fff;color:var(--primary)">Teklif Al ${icon('arrow')}</a>
+            <a href="/iletisim" class="btn" style="background:#fff;color:var(--primary)">Teklif Al ${icon('arrow')}</a>
         </div>
     </section>
     `

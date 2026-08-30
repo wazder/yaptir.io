@@ -51,21 +51,21 @@ async function callGroq(userText) {
 const RULES = [
     { test: /hizmet|otomasyon|yazılım|chatbot|entegrasyon|analitik/i,
       reply: 'AI Otomasyon, Özel Yazılım, Veri & Analitik, Entegrasyon, Chatbot & Asistan, Danışmanlık ve Sosyal Medya & Reklam olmak üzere 7 ana hizmet başlığımız var.',
-      route: '#/hizmetler', label: 'Hizmetleri incele' },
+      route: '/hizmetler', label: 'Hizmetleri incele' },
     { test: /proje|portf|örnek|iş\s?birliği/i,
       reply: 'SSW, RetroLokal, NEST ve DRV-E gibi farklı sektörlerden tamamladığımız projelerimizi inceleyebilirsiniz.',
-      route: '#/projeler', label: 'Projeleri incele' },
+      route: '/projeler', label: 'Projeleri incele' },
     { test: /teklif|fiyat|bütçe|ücret|maliyet|iletişim|görüş|demo/i,
       reply: 'Elbette! İhtiyacınızı dinleyip 24 saat içinde dönüş yapıyoruz. Teklif formunu doldurmanız yeterli.',
-      route: '#/iletisim', label: 'Teklif formuna git' },
+      route: '/iletisim', label: 'Teklif formuna git' },
     { test: /hakk|ekip|kim|kuru|şirket/i,
       reply: 'Yapay zeka mühendisleri, full-stack geliştiriciler ve proje yöneticilerinden oluşan bir ekibiz.',
-      route: '#/hakkimizda', label: 'Ekibimizi tanıyın' }
+      route: '/hakkimizda', label: 'Ekibimizi tanıyın' }
 ]
 
 const FALLBACK = {
     reply: 'Bu konuda size en doğru yanıtı ekibimiz verebilir. Teklif formu üzerinden bize ulaşır mısınız?',
-    route: '#/iletisim', label: 'İletişime geç'
+    route: '/iletisim', label: 'İletişime geç'
 }
 
 function matchRule(text) {
@@ -203,7 +203,7 @@ export function initChat() {
             window.setTimeout(() => {
                 typing.remove()
                 addMessage(rule.reply, 'bot')
-                if (wantsContact) addLink('#/iletisim', 'Teklif formuna git')
+                if (wantsContact) addLink('/iletisim', 'Teklif formuna git')
             }, 700)
             return
         }
@@ -212,12 +212,12 @@ export function initChat() {
             const reply = await callGroq(userText)
             typing.remove()
             addMessage(reply, 'bot')
-            if (wantsContact) addLink('#/iletisim', 'Teklif formuna git')
+            if (wantsContact) addLink('/iletisim', 'Teklif formuna git')
         } catch (err) {
             console.error('Groq API error:', err)
             typing.remove()
             addMessage(rule.reply, 'bot')
-            if (wantsContact) addLink('#/iletisim', 'Teklif formuna git')
+            if (wantsContact) addLink('/iletisim', 'Teklif formuna git')
         }
     }
 
