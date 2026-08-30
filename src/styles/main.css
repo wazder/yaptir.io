@@ -170,6 +170,12 @@ p {
     padding: 64px 0;
 }
 
+/* Sayfa açılış blokları (iç sayfaların üst kısmı): header payı + sıkı alt boşluk,
+   böylece başlık ile asıl içerik arasında dev bir boşluk kalmıyor. */
+.page-hero {
+    padding: 150px 0 40px;
+}
+
 .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -607,7 +613,7 @@ p {
 .ai-input {
     width: 100%;
     max-width: 620px;
-    margin-top: 36px;
+    margin-top: 56px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -660,7 +666,7 @@ p {
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 28px;
+    margin-top: 36px;
 }
 
 .chip {

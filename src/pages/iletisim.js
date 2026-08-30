@@ -3,7 +3,7 @@ import { icon } from '../utils/icons.js'
 
 export function renderIletisim() {
     return `
-    <section class="section" style="padding-top:160px">
+    <section class="section page-hero">
         <div class="container">
             <span class="eyebrow eyebrow--accent">İletişim</span>
             <h1 class="section-title">Konuşalım<span class="dot">.</span></h1>

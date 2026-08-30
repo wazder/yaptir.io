@@ -5,7 +5,7 @@ export function renderProjelerDetay(slug) {
     const p = projects.find(x => x.slug === slug)
     if (!p) {
         return `
-        <section class="section" style="padding-top:160px">
+        <section class="section page-hero">
             <div class="container">
                 <h1 class="section-title">Proje bulunamadı.</h1>
                 <a href="/projeler" class="link-arrow">Projelere dön ${icon('arrow')}</a>
@@ -14,7 +14,7 @@ export function renderProjelerDetay(slug) {
     }
 
     return `
-    <section class="section" style="padding-top:160px;padding-bottom:0;position:relative;overflow:hidden">
+    <section class="section page-hero" style="position:relative;overflow:hidden">
         <span class="intro-watermark project-detail-watermark">${p.letter}</span>
         <div class="container">
             <div class="project-detail-head">

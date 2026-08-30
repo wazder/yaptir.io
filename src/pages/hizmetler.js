@@ -3,7 +3,7 @@ import { icon } from '../utils/icons.js'
 
 export function renderHizmetler() {
     return `
-    <section class="section page-hero-grid" style="padding-top:160px">
+    <section class="section page-hero page-hero-grid">
         <div class="intro-grid-pattern" aria-hidden="true"></div>
         <div class="container">
             <span class="eyebrow">Hizmetlerimiz</span>

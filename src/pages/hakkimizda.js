@@ -3,7 +3,7 @@ import { icon } from '../utils/icons.js'
 
 export function renderHakkimizda() {
     return `
-    <section class="section services-section" style="padding-top:160px">
+    <section class="section page-hero services-section">
         <div class="services-section-aurora" aria-hidden="true"></div>
         <div class="container">
             <span class="eyebrow">Hakkımızda</span>

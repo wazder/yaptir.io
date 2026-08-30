@@ -3,7 +3,7 @@ import { projectRowHTML } from '../components/projectRow.js'
 
 export function renderProjeler() {
     return `
-    <section class="section sector-section" style="padding-top:160px">
+    <section class="section page-hero sector-section">
         <div class="sector-section-glow" aria-hidden="true"></div>
         <div class="container">
             <span class="eyebrow eyebrow--accent">Portföy</span>

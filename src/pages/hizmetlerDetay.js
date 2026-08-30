@@ -5,7 +5,7 @@ export function renderHizmetlerDetay(slug) {
     const s = services.find(x => x.id === slug)
     if (!s) {
         return `
-        <section class="section" style="padding-top:160px">
+        <section class="section page-hero">
             <div class="container">
                 <h1 class="section-title">Hizmet bulunamadı.</h1>
                 <a href="/hizmetler" class="link-arrow">Hizmetlere dön ${icon('arrow')}</a>
@@ -14,7 +14,7 @@ export function renderHizmetlerDetay(slug) {
     }
 
     return `
-    <section class="section page-hero-grid" style="padding-top:160px;padding-bottom:0">
+    <section class="section page-hero page-hero-grid">
         <div class="intro-grid-pattern" aria-hidden="true"></div>
         <div class="container">
             <a href="/hizmetler" class="link-arrow svc-detail-back">${icon('arrow')} Tüm Hizmetler</a>
