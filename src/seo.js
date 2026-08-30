@@ -12,7 +12,7 @@ export function metaFor(path) {
         if (s) return {
             title: s.seo?.title || `${s.title} — yaptir.io`,
             description: (s.seo?.desc || `${s.long} ${s.short}`).slice(0, 158),
-            canonical: `${BASE}/hizmetler/${slug}`
+            canonical: `${BASE}/hizmetler/${slug}/`
         }
     }
     if (base === 'projeler' && slug) {
@@ -20,7 +20,7 @@ export function metaFor(path) {
         if (p) return {
             title: `${p.title} — ${p.client || 'Proje'} Referansı | yaptir.io`,
             description: p.short.slice(0, 158),
-            canonical: `${BASE}/projeler/${slug}`
+            canonical: `${BASE}/projeler/${slug}/`
         }
     }
 
@@ -49,8 +49,11 @@ export function metaFor(path) {
             description: 'Yazılım veya chatbot yaptırmak mı istiyorsunuz? Formu doldurun, 24 saat içinde net teklif alın. İlk görüşme ücretsiz — info@yaptir.io, Cihangir/İstanbul.'
         }
     }
+    /* Canlı sunucu (CF Pages) dizin rotalarını sondaki eğik çizgiyle servis
+       ediyor (/hizmetler → 308 → /hizmetler/); canonical ve sitemap 308
+       zincirine girmesin diye nihai biçimi kullanır. */
     const m = pages[base] || pages['']
-    return { ...m, canonical: `${BASE}/${base}` .replace(/\/$/, '') || BASE }
+    return { ...m, canonical: base ? `${BASE}/${base}/` : `${BASE}/` }
 }
 
 export function applyMeta(path) {
