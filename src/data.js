@@ -510,7 +510,7 @@ export const projects = [
 
 export const team = [
     { initials: 'NS', name: 'Nazlı Nehir Sertbaş', role: 'Kurucu & CEO' },
-    { initials: 'MS', name: 'Musa Soylu', role: 'Creative Art Direction Lead' },
+    { initials: 'MS', name: 'Musa Soylu', role: 'Creative Art Direction Lead', linkedin: 'https://www.linkedin.com/in/musa-soylu-2513ba173/' },
     { initials: 'HT', name: 'Hasan Tatar', role: 'Yazılım Mühendisi' },
     { initials: 'UG', name: 'Umut Gökmen', role: 'Yazılım Mühendisi' },
     { initials: 'FB', name: 'Furkan Bora', role: 'Yazılım Mühendisi' }

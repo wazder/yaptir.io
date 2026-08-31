@@ -39,7 +39,7 @@ export function renderHakkimizda() {
                         <div class="team-avatar">${m.initials}</div>
                         <h4>${m.name}</h4>
                         <span>${m.role}</span>
-                        <span class="team-card-social">${icon('linkedin')}</span>
+                        ${m.linkedin ? `<a class="team-card-social" href="${m.linkedin}" target="_blank" rel="noopener" aria-label="${m.name} LinkedIn">${icon('linkedin')}</a>` : ''}
                     </div>
                 `).join('')}
             </div>

@@ -52,6 +52,13 @@ const orgLd = {
         addressRegion: 'İstanbul',
         addressCountry: 'TR'
     },
+    /* Resmi sosyal profiller — Google'ın marka aramasında hesapları
+       şirkete bağlaması (Knowledge Panel) için. Müşteri projelerinin
+       adresleri buraya YAZILMAZ, onlar bizim profilimiz değil. */
+    sameAs: [
+        'https://www.linkedin.com/company/yaptir-io/',
+        'https://www.instagram.com/yaptir.io/'
+    ],
     geo: { '@type': 'GeoCoordinates', latitude: 41.03175, longitude: 28.98262 },
     hasMap: 'https://www.openstreetmap.org/?mlat=41.03175&mlon=28.98262#map=17/41.03175/28.98262',
     openingHoursSpecification: {
