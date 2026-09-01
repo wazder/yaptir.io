@@ -1,49 +1,22 @@
 import { services, industries, projects, team, contact } from '../data.js'
 
-/* Real Groq-backed assistant (matches the VITE_GROQ_API_KEY secret already
-   wired into .github/workflows/deploy.yml — no key here means local dev
-   without a .env.local, in which case we fall back to the old rule matcher
-   below so the widget still degrades gracefully instead of breaking). */
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY
-const GROQ_MODEL = 'openai/gpt-oss-120b'
-
-const SYSTEM_PROMPT = `Sen yaptir.io'nun yapay zeka asistanısın. yaptir.io, KOBİ'lere yapay zeka otomasyonu ve özel yazılım çözümleri üreten bir stüdyo.
-
-Hizmetlerimiz:
-${services.map(s => `- ${s.title}: ${s.short}`).join('\n')}
-
-Sektöre özel örnekler (her biri gerçek entegrasyon/senaryo içerir, gerektiğinde anlat):
-${industries.map(i => `- ${i.name}: ${i.headline}`).join('\n')}
-
-Tamamladığımız projeler: ${projects.map(p => p.title).join(', ')}.
-Ekip: ${team.map(m => `${m.name} (${m.role})`).join(', ')}.
-İletişim: ${contact.email}, çalışma saatleri ${contact.hours}.
-
-Kurallar:
-- Bu bir SOHBET, sunum değil. Her mesajda TEK bir fikir/soru ver, 1-2 kısa cümle. Asla madde listesi, asla birden fazla öneriyi tek mesaja sığdırma.
-- Her şeyi bir mesajda anlatmaya çalışma — bir şey söyle, karşındakinin tepkisini bekle, ona göre devam et. Gerçek bir insan gibi sırayla konuş.
-- Türkçe konuş, samimi ve somut ol; genel geçme, gerektiğinde yukarıdaki örneklerden gerçek bir detay (entegrasyon adı, sektör) kullan.
-- Ziyaretçinin sektörünü/ihtiyacını öğrenmeden çözüm yağdırma — önce kısa bir soru sor.
-- Fiyat sorulursa net rakam verme, "işletmenize özel teklif için iletişim formunu doldurun" de.
-- yaptir.io dışı konularda kibarca "bu konuda yardımcı olamam ama işletmeniz için ne yapabileceğimizi konuşalım" de.`
+/* Sohbet artık Groq'a doğrudan gitmiyor: istek kendi alan adımızdaki
+   /api/chat geçidine gider (functions/api/chat.js), anahtar orada durur.
+   Geçit ulaşılamazsa aşağıdaki kural motoruna düşülür, widget kırılmaz. */
 
 const conversationHistory = []
 
 async function callGroq(userText) {
     conversationHistory.push({ role: 'user', content: userText })
-    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const res = await fetch('/api/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${GROQ_API_KEY}` },
-        body: JSON.stringify({
-            model: GROQ_MODEL,
-            messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...conversationHistory],
-            max_tokens: 180,
-            temperature: 0.7
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: conversationHistory })
     })
-    if (!res.ok) throw new Error(`Groq API ${res.status}`)
+    if (!res.ok) throw new Error(`chat geçidi ${res.status}`)
     const data = await res.json()
-    const reply = data.choices[0].message.content
+    const reply = data.reply
+    if (!reply) throw new Error('boş yanıt')
     conversationHistory.push({ role: 'assistant', content: reply })
     return reply
 }
@@ -199,22 +172,13 @@ export function initChat() {
         const wantsContact = CONTACT_INTENT.test(userText)
         const typing = addTyping()
 
-        if (!GROQ_API_KEY) {
-            window.setTimeout(() => {
-                typing.remove()
-                addMessage(rule.reply, 'bot')
-                if (wantsContact) addLink('/iletisim', 'Teklif formuna git')
-            }, 700)
-            return
-        }
-
         try {
             const reply = await callGroq(userText)
             typing.remove()
             addMessage(reply, 'bot')
             if (wantsContact) addLink('/iletisim', 'Teklif formuna git')
         } catch (err) {
-            console.error('Groq API error:', err)
+            console.error('Sohbet geçidi hatası:', err)
             typing.remove()
             addMessage(rule.reply, 'bot')
             if (wantsContact) addLink('/iletisim', 'Teklif formuna git')

@@ -19,7 +19,10 @@ Bu repo, https://yaptir.io canlı sitesinin yapısını/içeriğini yansıtan ye
 - `src/utils/icons.js` — inline SVG ikon seti (lucide tarzı, CDN'e bağımlı değil)
 
 ## Notlar
-- Sohbet asistanı (`chat.js`) gerçek Groq API'ye (Llama 3.3 70B) bağlı — sistem promptu `data.js`'teki gerçek hizmet/sektör/proje içeriğinden üretiliyor. Key `VITE_GROQ_API_KEY` build-time env değişkeni; yerel `.env.local` dosyasından gelir (git'e girmez). NOT: Vite build-time değişkeni olduğu için anahtar istemci paketine gömülür ve tarayıcıdan okunabilir. Local dev'de bu değişken yoksa eski kural-tabanlı motor devreye girer (bozuk deneyim yerine zarif geri düşüş).
+- Sohbet asistanı (`chat.js`) gerçek Groq API'ye (Llama 3.3 70B) bağlı — sistem promptu `data.js`'teki gerçek hizmet/sektör/proje içeriğinden üretiliyor. İstek doğrudan Groq'a DEĞİL, kendi alan adımızdaki **`/api/chat`** geçidine gider (`functions/api/chat.js`, Cloudflare Pages Function). Anahtar yalnız orada: Pages secret'ı **`GROQ_API_KEY`** (`npx wrangler pages secret put GROQ_API_KEY --project-name=yaptir-io`). İstemci paketinde anahtar YOK.
+  - Geçit ziyaretçiden yalnız `user`/`assistant` sırasını kabul eder; `system` rolü filtrelenir, son 20 tur ve mesaj başına 1000 karakterle sınırlıdır, model ve `max_tokens` sabittir — uç nokta genel amaçlı bir LLM olarak kullanılamasın diye.
+  - Sistem promptu `src/chat-prompt.js`'te ve yalnız sunucuda okunur; `src/data.js`'ten üretilmeye devam eder.
+  - Geçit ulaşılamazsa (`vite dev`'de olduğu gibi) widget eski kural motoruna düşer, kırılmaz. Local dev'de bu değişken yoksa eski kural-tabanlı motor devreye girer (bozuk deneyim yerine zarif geri düşüş).
 - İletişim formu backend'i yok; submit'te `mailto:info@yaptir.io` linkiyle kullanıcının mail istemcisini açar.
 - Harita gömme gerçek değil (API key gerektirir), statik bir yer tutucu.
 - **Yayın: `npm run deploy`** — build alır ve **Cloudflare Pages**'e (`yaptir-io` projesi) yükler. Site 5 aydır burada duruyor.
