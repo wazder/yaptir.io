@@ -19,7 +19,10 @@ Bu repo, https://yaptir.io canlı sitesinin yapısını/içeriğini yansıtan ye
 - `src/utils/icons.js` — inline SVG ikon seti (lucide tarzı, CDN'e bağımlı değil)
 
 ## Notlar
-- Sohbet asistanı (`chat.js`) gerçek Groq API'ye (Llama 3.3 70B) bağlı — sistem promptu `data.js`'teki gerçek hizmet/sektör/proje içeriğinden üretiliyor. Key `VITE_GROQ_API_KEY` build-time env değişkeni (`.github/workflows/deploy.yml`'deki GitHub Actions secret'ından geliyor, repoda hiçbir zaman düz metin olarak durmaz). Local dev'de bu değişken yoksa eski kural-tabanlı motor devreye girer (bozuk deneyim yerine zarif geri düşüş).
+- Sohbet asistanı (`chat.js`) gerçek Groq API'ye (Llama 3.3 70B) bağlı — sistem promptu `data.js`'teki gerçek hizmet/sektör/proje içeriğinden üretiliyor. Key `VITE_GROQ_API_KEY` build-time env değişkeni; yerel `.env.local` dosyasından gelir (git'e girmez). NOT: Vite build-time değişkeni olduğu için anahtar istemci paketine gömülür ve tarayıcıdan okunabilir. Local dev'de bu değişken yoksa eski kural-tabanlı motor devreye girer (bozuk deneyim yerine zarif geri düşüş).
 - İletişim formu backend'i yok; submit'te `mailto:info@yaptir.io` linkiyle kullanıcının mail istemcisini açar.
 - Harita gömme gerçek değil (API key gerektirir), statik bir yer tutucu.
-- Yayın: push → `main`'de GitHub Actions (`deploy.yml`) otomatik build+deploy eder, GitHub Pages üzerinden `yaptir.io`'ya (public/CNAME) yayınlanır. Ayrı bir Vercel/Netlify hesabı YOK, domain zaten bu akışla bağlı.
+- **Yayın: `npm run deploy`** — build alır ve **Cloudflare Pages**'e (`yaptir-io` projesi) yükler. Site 5 aydır burada duruyor.
+  - **`git push` YAYINLAMAZ.** Cloudflare Pages projesi GitHub'a bağlı değil (`Git Provider: No`); dağıtım her zaman elle `wrangler pages deploy` ile yapılır.
+  - Eskiden repoda GitHub Pages'e yayınlayan bir Actions workflow'u vardı; kimsenin bakmadığı `wazder.github.io/yaptir.io` adresini güncelleyip sahte "başarılı" tiki verdiği için 1 Eyl 2026'da kaldırıldı.
+  - Alt sayfalar 308 ile sonuna `/` ekliyor — `curl` ile kontrolde `-L` şart, yoksa boş görünür.
