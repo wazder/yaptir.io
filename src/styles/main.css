@@ -3112,6 +3112,22 @@ p {
     margin-bottom: 6px;
 }
 
+.footer-brand .footer-parent {
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.footer-brand .footer-parent strong {
+    color: var(--text, inherit);
+    font-weight: 600;
+}
+
+.footer-brand .footer-parent:hover,
+.footer-brand .footer-parent:hover strong {
+    color: var(--accent, currentColor);
+}
+
 .footer-col h5 {
     font-size: 12px;
     letter-spacing: .08em;
